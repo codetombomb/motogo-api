@@ -1,0 +1,19 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  owner_id: 1
+  year: 1
+  make: MyString
+  model: MyString
+  rating: 1
+  bike_name: MyString
+  category: MyString
+
+two:
+  owner_id: 1
+  year: 1
+  make: MyString
+  model: MyString
+  rating: 1
+  bike_name: MyString
+  category: MyString
