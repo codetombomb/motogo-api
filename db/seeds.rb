@@ -4,7 +4,18 @@ Renter.all.destroy_all
 Bike.all.destroy_all
 
 
-
+User.create(
+    first_name: "Tom",
+    last_name: "Tobar",
+    email: "codetombomb@gmail.com",
+    password: "asdfasdf",
+    password_confirmation: "asdfasdf",
+    address: "19513 Melwas Way",
+    city: "Pfrumundachee",
+    state: "TX",
+    zip_code: "78666",
+    phone_number: "512.487.2569"
+)
 # Generate users
 10.times{
     password = Faker::Internet.password(min_length: 10, max_length: 20, mix_case: true, special_characters: true)
