@@ -1,5 +1,7 @@
 class StaticController < ApplicationController
     def home
-        render json: { users: User.all, bikes: Bike.all }
+        users = User.all
+        user_bikes = Bike.all
+        render json: { users: users, user_bikes: user_bikes  }
     end
 end

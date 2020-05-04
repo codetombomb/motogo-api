@@ -1373,3 +1373,1897 @@ Completed 200 OK in 290ms (Views: 0.8ms | ActiveRecord: 0.9ms | Allocations: 103
 
   [1m[36mUser Exists? (3.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" LIMIT $1[0m  [["LIMIT", 1]]
   [1m[36mUser Load (3.7ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+Started POST "/registrations" for ::1 at 2020-04-28 00:48:29 -0500
+  [1m[35m (2.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by RegistrationsController#create as HTML
+  Parameters: {"user"=>{"email"=>"tom.tobar@dev.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "registration"=>{"user"=>{"email"=>"tom.tobar@dev.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}}
+  [1m[35m (3.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/registrations_controller.rb:3:in `create'
+  [1m[36mUser Exists? (1.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "tom.tobar@dev.com"], ["LIMIT", 1]]
+  ↳ app/controllers/registrations_controller.rb:3:in `create'
+  [1m[36mUser Create (45.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["email", "tom.tobar@dev.com"], ["password_digest", "$2a$12$IA82munPFkvWAiwVCnlD0.43/lja9yG7c/QGmmgn/ylzgEQYLhnEW"], ["created_at", "2020-04-28 05:48:30.234664"], ["updated_at", "2020-04-28 05:48:30.234664"]]
+  ↳ app/controllers/registrations_controller.rb:3:in `create'
+  [1m[35m (6.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/registrations_controller.rb:3:in `create'
+Completed 200 OK in 377ms (Views: 4.5ms | ActiveRecord: 97.3ms | Allocations: 15209)
+
+
+Started POST "/registrations" for ::1 at 2020-04-28 01:15:08 -0500
+Processing by RegistrationsController#create as HTML
+  Parameters: {"user"=>{"email"=>"ashtom.tobar@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "registration"=>{"user"=>{"email"=>"ashtom.tobar@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/registrations_controller.rb:3:in `create'
+  [1m[36mUser Exists? (1.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "ashtom.tobar@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/registrations_controller.rb:3:in `create'
+  [1m[36mUser Create (4.7ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["email", "ashtom.tobar@gmail.com"], ["password_digest", "$2a$12$/uMBjEbDMAfSMvD5E7QPW.xTM.G5GDiW5HH5M/5oWIps6/x4bfs6y"], ["created_at", "2020-04-28 06:15:08.552343"], ["updated_at", "2020-04-28 06:15:08.552343"]]
+  ↳ app/controllers/registrations_controller.rb:3:in `create'
+  [1m[35m (19.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/registrations_controller.rb:3:in `create'
+Completed 200 OK in 287ms (Views: 6.2ms | ActiveRecord: 25.9ms | Allocations: 3795)
+
+
+Started POST "/registrations" for ::1 at 2020-04-28 01:15:22 -0500
+Processing by RegistrationsController#create as HTML
+  Parameters: {"user"=>{"email"=>"ashtom.tobar@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "registration"=>{"user"=>{"email"=>"ashtom.tobar@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/registrations_controller.rb:3:in `create'
+  [1m[36mUser Exists? (24.5ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "ashtom.tobar@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/registrations_controller.rb:3:in `create'
+  [1m[35m (21.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/registrations_controller.rb:3:in `create'
+Completed 422 Unprocessable Entity in 683ms (ActiveRecord: 46.1ms | Allocations: 184638)
+
+
+  
+ActiveRecord::RecordInvalid (Validation failed: Email has already been taken):
+  
+app/controllers/registrations_controller.rb:3:in `create'
+Started POST "/registrations" for ::1 at 2020-04-28 01:16:21 -0500
+Processing by RegistrationsController#create as HTML
+  Parameters: {"user"=>{"email"=>"tommy12242@htomail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "registration"=>{"user"=>{"email"=>"tommy12242@htomail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/registrations_controller.rb:3:in `create'
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "tommy12242@htomail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/registrations_controller.rb:3:in `create'
+  [1m[36mUser Create (1.6ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["email", "tommy12242@htomail.com"], ["password_digest", "$2a$12$pheYQisPWQgfa1U/URl/z.pN9l2MLFbPu5SdiU02/VvdyNdtGTYYq"], ["created_at", "2020-04-28 06:16:21.290562"], ["updated_at", "2020-04-28 06:16:21.290562"]]
+  ↳ app/controllers/registrations_controller.rb:3:in `create'
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/registrations_controller.rb:3:in `create'
+Completed 200 OK in 262ms (Views: 0.5ms | ActiveRecord: 2.5ms | Allocations: 3814)
+
+
+Started POST "/registrations" for ::1 at 2020-04-28 01:25:16 -0500
+Processing by RegistrationsController#create as HTML
+  Parameters: {"user"=>{"email"=>"hush@yourface.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "registration"=>{"user"=>{"email"=>"hush@yourface.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}}
+  [1m[35m (17.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/registrations_controller.rb:3:in `create'
+  [1m[36mUser Exists? (2.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "hush@yourface.com"], ["LIMIT", 1]]
+  ↳ app/controllers/registrations_controller.rb:3:in `create'
+  [1m[36mUser Create (0.8ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["email", "hush@yourface.com"], ["password_digest", "$2a$12$SVyq6DktXIeU.ZbmOo0faet1fHPqaN1hYgPugqwaGYpNXWC5L3v72"], ["created_at", "2020-04-28 06:25:17.209748"], ["updated_at", "2020-04-28 06:25:17.209748"]]
+  ↳ app/controllers/registrations_controller.rb:3:in `create'
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/registrations_controller.rb:3:in `create'
+Completed 200 OK in 288ms (Views: 0.8ms | ActiveRecord: 21.3ms | Allocations: 3792)
+
+
+Started POST "/registrations" for ::1 at 2020-04-28 09:20:15 -0500
+  [1m[35m (4.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by RegistrationsController#create as HTML
+  Parameters: {"user"=>{"email"=>"test1@test.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "registration"=>{"user"=>{"email"=>"test1@test.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/registrations_controller.rb:3:in `create'
+  [1m[36mUser Exists? (25.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "test1@test.com"], ["LIMIT", 1]]
+  ↳ app/controllers/registrations_controller.rb:3:in `create'
+  [1m[35m (0.6ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/registrations_controller.rb:3:in `create'
+Completed 422 Unprocessable Entity in 642ms (ActiveRecord: 51.3ms | Allocations: 195876)
+
+
+  
+ActiveRecord::RecordInvalid (Validation failed: Password confirmation doesn't match Password):
+  
+app/controllers/registrations_controller.rb:3:in `create'
+Started POST "/registrations" for ::1 at 2020-04-28 09:21:54 -0500
+Processing by RegistrationsController#create as HTML
+  Parameters: {"user"=>{"email"=>"test1@test.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "registration"=>{"user"=>{"email"=>"test1@test.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/registrations_controller.rb:3:in `create'
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "test1@test.com"], ["LIMIT", 1]]
+  ↳ app/controllers/registrations_controller.rb:3:in `create'
+  [1m[36mUser Create (13.9ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["email", "test1@test.com"], ["password_digest", "$2a$12$jE1cD0GfXiN2OnrTVhFdBOkWhiTz0zTeOh7DMcarg8XklJrv9e9b2"], ["created_at", "2020-04-28 14:21:54.698278"], ["updated_at", "2020-04-28 14:21:54.698278"]]
+  ↳ app/controllers/registrations_controller.rb:3:in `create'
+  [1m[35m (2.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/registrations_controller.rb:3:in `create'
+Completed 200 OK in 295ms (Views: 1.7ms | ActiveRecord: 17.3ms | Allocations: 4017)
+
+
+Started POST "/sessions" for ::1 at 2020-04-28 09:22:10 -0500
+  
+ArgumentError (wrong number of arguments (given 0, expected 1+)):
+  
+app/controllers/concerns/current_user_concern.rb:4:in `include'
+app/controllers/concerns/current_user_concern.rb:4:in `<module:CurrentUserConcern>'
+app/controllers/concerns/current_user_concern.rb:1:in `<main>'
+app/controllers/sessions_controller.rb:2:in `<class:SessionsController>'
+app/controllers/sessions_controller.rb:1:in `<main>'
+Started POST "/registrations" for ::1 at 2020-04-28 09:25:40 -0500
+Processing by RegistrationsController#create as HTML
+  Parameters: {"user"=>{"email"=>"test2@test.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "registration"=>{"user"=>{"email"=>"test2@test.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/registrations_controller.rb:3:in `create'
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "test2@test.com"], ["LIMIT", 1]]
+  ↳ app/controllers/registrations_controller.rb:3:in `create'
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/registrations_controller.rb:3:in `create'
+Completed 422 Unprocessable Entity in 250ms (ActiveRecord: 6.3ms | Allocations: 13357)
+
+
+  
+ActiveRecord::RecordInvalid (Validation failed: Password confirmation doesn't match Password):
+  
+app/controllers/registrations_controller.rb:3:in `create'
+Started POST "/registrations" for ::1 at 2020-04-28 09:25:56 -0500
+Processing by RegistrationsController#create as HTML
+  Parameters: {"user"=>{"email"=>"test2@test.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "registration"=>{"user"=>{"email"=>"test2@test.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}}
+  [1m[35m (0.9ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/registrations_controller.rb:3:in `create'
+  [1m[36mUser Exists? (0.8ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "test2@test.com"], ["LIMIT", 1]]
+  ↳ app/controllers/registrations_controller.rb:3:in `create'
+  [1m[36mUser Create (1.6ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["email", "test2@test.com"], ["password_digest", "$2a$12$ZwmMjZ4SEDt8Tg9KZyV7JeTGzLB3i2q9Ba1tb6PWmZ8hzWaZG5cUK"], ["created_at", "2020-04-28 14:25:56.702738"], ["updated_at", "2020-04-28 14:25:56.702738"]]
+  ↳ app/controllers/registrations_controller.rb:3:in `create'
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/registrations_controller.rb:3:in `create'
+Completed 200 OK in 237ms (Views: 0.4ms | ActiveRecord: 3.9ms | Allocations: 3873)
+
+
+Started POST "/sessions" for ::1 at 2020-04-28 09:26:22 -0500
+  
+AbstractController::ActionNotFound (The action 'create' could not be found for SessionsController):
+  
+actionpack (6.0.2.2) lib/abstract_controller/base.rb:131:in `process'
+actionview (6.0.2.2) lib/action_view/rendering.rb:39:in `process'
+actionpack (6.0.2.2) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (6.0.2.2) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (6.0.2.2) lib/action_dispatch/routing/route_set.rb:51:in `dispatch'
+actionpack (6.0.2.2) lib/action_dispatch/routing/route_set.rb:33:in `serve'
+actionpack (6.0.2.2) lib/action_dispatch/journey/router.rb:49:in `block in serve'
+actionpack (6.0.2.2) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.0.2.2) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.0.2.2) lib/action_dispatch/routing/route_set.rb:837:in `call'
+rack (2.2.2) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.2) lib/rack/etag.rb:27:in `call'
+rack (2.2.2) lib/rack/conditional_get.rb:40:in `call'
+rack (2.2.2) lib/rack/head.rb:12:in `call'
+actionpack (6.0.2.2) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.2.2) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.2) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (6.0.2.2) lib/action_dispatch/middleware/cookies.rb:648:in `call'
+activerecord (6.0.2.2) lib/active_record/migration.rb:567:in `call'
+actionpack (6.0.2.2) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.0.2.2) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (6.0.2.2) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.0.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.2.2) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (6.0.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:32:in `call'
+web-console (4.0.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.2.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (6.0.2.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.2.2) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.2.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.2.2) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.2.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.2.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.2.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.2) lib/rack/method_override.rb:24:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.2.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.2.2) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.2.2) lib/action_dispatch/middleware/host_authorization.rb:83:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+webpacker (4.2.2) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.2.2) lib/rails/engine.rb:526:in `call'
+puma (4.3.3) lib/puma/configuration.rb:228:in `call'
+puma (4.3.3) lib/puma/server.rb:682:in `handle_request'
+puma (4.3.3) lib/puma/server.rb:472:in `process_client'
+puma (4.3.3) lib/puma/server.rb:328:in `block in run'
+puma (4.3.3) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started POST "/registrations" for ::1 at 2020-04-28 09:34:19 -0500
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by RegistrationsController#create as HTML
+  Parameters: {"user"=>{"email"=>"tommy12242@htomail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "registration"=>{"user"=>{"email"=>"tommy12242@htomail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}}
+  [1m[35m (4.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/registrations_controller.rb:3:in `create'
+  [1m[36mUser Exists? (0.9ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "tommy12242@htomail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/registrations_controller.rb:3:in `create'
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/registrations_controller.rb:3:in `create'
+Completed 422 Unprocessable Entity in 593ms (ActiveRecord: 21.4ms | Allocations: 195833)
+
+
+  
+ActiveRecord::RecordInvalid (Validation failed: Email has already been taken):
+  
+app/controllers/registrations_controller.rb:3:in `create'
+Started POST "/registrations" for ::1 at 2020-04-28 09:34:54 -0500
+Processing by RegistrationsController#create as HTML
+  Parameters: {"user"=>{"email"=>"heythere@me.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "registration"=>{"user"=>{"email"=>"heythere@me.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}}
+  [1m[35m (2.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/registrations_controller.rb:3:in `create'
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "heythere@me.com"], ["LIMIT", 1]]
+  ↳ app/controllers/registrations_controller.rb:3:in `create'
+  [1m[36mUser Create (4.9ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["email", "heythere@me.com"], ["password_digest", "$2a$12$IpOVRZouxgXnBlBcBC7.bO/aEckKWwEcDPYoGUt0iBhxe6TyMBtoW"], ["created_at", "2020-04-28 14:34:54.506570"], ["updated_at", "2020-04-28 14:34:54.506570"]]
+  ↳ app/controllers/registrations_controller.rb:3:in `create'
+  [1m[35m (2.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/registrations_controller.rb:3:in `create'
+Completed 200 OK in 271ms (Views: 0.8ms | ActiveRecord: 9.9ms | Allocations: 4090)
+
+
+Started POST "/registrations" for ::1 at 2020-04-28 11:45:22 -0500
+Processing by RegistrationsController#create as HTML
+  Parameters: {"user"=>{"email"=>"burn@hell.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "registration"=>{"user"=>{"email"=>"burn@hell.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/registrations_controller.rb:3:in `create'
+  [1m[36mUser Exists? (1.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "burn@hell.com"], ["LIMIT", 1]]
+  ↳ app/controllers/registrations_controller.rb:3:in `create'
+  [1m[36mUser Create (4.6ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["email", "burn@hell.com"], ["password_digest", "$2a$12$zv1ZtcEv5gxiBsfMQFmfPuLMjrPaf8mYRQMiKtcTTPNobYAWYzRq2"], ["created_at", "2020-04-28 16:45:22.944799"], ["updated_at", "2020-04-28 16:45:22.944799"]]
+  ↳ app/controllers/registrations_controller.rb:3:in `create'
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/registrations_controller.rb:3:in `create'
+Completed 200 OK in 290ms (Views: 6.6ms | ActiveRecord: 7.5ms | Allocations: 13211)
+
+
+Started POST "/sessions" for ::1 at 2020-04-28 11:45:39 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"user"=>{"email"=>"burn@hell.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"burn@hell.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 29], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/current_user_concern.rb:10:in `set_current_user'
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "burn@hell.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:6:in `create'
+Completed 200 OK in 243ms (Views: 0.4ms | ActiveRecord: 2.2ms | Allocations: 1969)
+
+
+Started POST "/registrations" for ::1 at 2020-04-28 11:54:50 -0500
+Processing by RegistrationsController#create as HTML
+  Parameters: {"user"=>{"email"=>"you@tube.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "registration"=>{"user"=>{"email"=>"you@tube.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/registrations_controller.rb:3:in `create'
+  [1m[36mUser Exists? (1.7ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "you@tube.com"], ["LIMIT", 1]]
+  ↳ app/controllers/registrations_controller.rb:3:in `create'
+  [1m[36mUser Create (7.7ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["email", "you@tube.com"], ["password_digest", "$2a$12$rwuDPfc1q.HzB0eQwqWsB.gLoDEqOCP9cfC6.A9oK9mAMzqzaewCC"], ["created_at", "2020-04-28 16:54:50.344936"], ["updated_at", "2020-04-28 16:54:50.344936"]]
+  ↳ app/controllers/registrations_controller.rb:3:in `create'
+  [1m[35m (1.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/registrations_controller.rb:3:in `create'
+Completed 200 OK in 284ms (Views: 4.9ms | ActiveRecord: 11.4ms | Allocations: 3782)
+
+
+Started POST "/sessions" for ::1 at 2020-04-28 11:55:04 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"user"=>{"email"=>"you@tube.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"you@tube.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 30], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/current_user_concern.rb:10:in `set_current_user'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "you@tube.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:6:in `create'
+Completed 200 OK in 665ms (Views: 0.4ms | ActiveRecord: 15.4ms | Allocations: 1667)
+
+
+Started GET "/logged_in" for ::1 at 2020-04-28 11:58:45 -0500
+Processing by SessionsController#logged_in as HTML
+  [1m[36mUser Load (412.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 30], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/current_user_concern.rb:10:in `set_current_user'
+Completed 200 OK in 664ms (Views: 233.3ms | ActiveRecord: 412.2ms | Allocations: 977)
+
+
+Started GET "/logged_in" for ::1 at 2020-04-28 11:59:42 -0500
+Processing by SessionsController#logged_in as HTML
+  [1m[36mUser Load (6.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 30], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/current_user_concern.rb:10:in `set_current_user'
+Completed 200 OK in 14ms (Views: 3.7ms | ActiveRecord: 6.3ms | Allocations: 976)
+
+
+Started GET "/logged_in" for ::1 at 2020-04-28 12:00:12 -0500
+Processing by SessionsController#logged_in as HTML
+  [1m[36mUser Load (16.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 30], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/current_user_concern.rb:10:in `set_current_user'
+Completed 200 OK in 23ms (Views: 0.7ms | ActiveRecord: 16.7ms | Allocations: 977)
+
+
+Started POST "/registrations" for ::1 at 2020-04-28 12:00:44 -0500
+Processing by RegistrationsController#create as HTML
+  Parameters: {"user"=>{"email"=>"bunsen@burner.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "registration"=>{"user"=>{"email"=>"bunsen@burner.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/registrations_controller.rb:3:in `create'
+  [1m[36mUser Exists? (1.7ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "bunsen@burner.com"], ["LIMIT", 1]]
+  ↳ app/controllers/registrations_controller.rb:3:in `create'
+  [1m[36mUser Create (10.0ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["email", "bunsen@burner.com"], ["password_digest", "$2a$12$bLTJNROtDMcot4Bj/0ICpO3wNGmtjFSeDOn5Q5a3oEjiu9rCPLOPi"], ["created_at", "2020-04-28 17:00:44.520349"], ["updated_at", "2020-04-28 17:00:44.520349"]]
+  ↳ app/controllers/registrations_controller.rb:3:in `create'
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/registrations_controller.rb:3:in `create'
+Completed 200 OK in 324ms (Views: 1.0ms | ActiveRecord: 12.4ms | Allocations: 3738)
+
+
+Started GET "/logged_in" for ::1 at 2020-04-28 12:00:50 -0500
+Processing by SessionsController#logged_in as HTML
+  [1m[36mUser Load (44.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 31], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/current_user_concern.rb:10:in `set_current_user'
+Completed 200 OK in 48ms (Views: 1.1ms | ActiveRecord: 44.0ms | Allocations: 979)
+
+
+Started POST "/sessions" for ::1 at 2020-04-28 12:00:58 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"user"=>{"email"=>"bunsen@burner.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"bunsen@burner.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 31], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/current_user_concern.rb:10:in `set_current_user'
+  [1m[36mUser Load (4.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "bunsen@burner.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:6:in `create'
+Completed 200 OK in 253ms (Views: 0.4ms | ActiveRecord: 4.9ms | Allocations: 1603)
+
+
+Started GET "/logged_in" for ::1 at 2020-04-28 12:02:28 -0500
+Processing by SessionsController#logged_in as HTML
+  [1m[36mUser Load (22.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 31], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/current_user_concern.rb:10:in `set_current_user'
+Completed 200 OK in 56ms (Views: 6.5ms | ActiveRecord: 22.1ms | Allocations: 981)
+
+
+Started GET "/logged_in" for ::1 at 2020-04-28 12:02:38 -0500
+Processing by SessionsController#logged_in as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 31], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/current_user_concern.rb:10:in `set_current_user'
+Completed 200 OK in 4ms (Views: 0.7ms | ActiveRecord: 0.4ms | Allocations: 973)
+
+
+Started POST "/registrations" for ::1 at 2020-04-28 12:02:55 -0500
+Processing by RegistrationsController#create as HTML
+  Parameters: {"user"=>{"email"=>"no@fx.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "registration"=>{"user"=>{"email"=>"no@fx.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}}
+  [1m[35m (47.8ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/registrations_controller.rb:3:in `create'
+  [1m[36mUser Exists? (56.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "no@fx.com"], ["LIMIT", 1]]
+  ↳ app/controllers/registrations_controller.rb:3:in `create'
+  [1m[36mUser Create (53.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["email", "no@fx.com"], ["password_digest", "$2a$12$m6GexDwh7ois50LArUlZVedzEZGws7HjdD.Lo3PuL5wQdsK2uqY96"], ["created_at", "2020-04-28 17:02:55.651381"], ["updated_at", "2020-04-28 17:02:55.651381"]]
+  ↳ app/controllers/registrations_controller.rb:3:in `create'
+  [1m[35m (46.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/registrations_controller.rb:3:in `create'
+Completed 200 OK in 646ms (Views: 0.7ms | ActiveRecord: 203.7ms | Allocations: 3729)
+
+
+Started GET "/logged_in" for ::1 at 2020-04-28 12:03:01 -0500
+Processing by SessionsController#logged_in as HTML
+  [1m[36mUser Load (34.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 32], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/current_user_concern.rb:10:in `set_current_user'
+Completed 200 OK in 41ms (Views: 0.6ms | ActiveRecord: 34.1ms | Allocations: 974)
+
+
+Started POST "/sessions" for ::1 at 2020-04-28 12:03:10 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"user"=>{"email"=>"no@fx.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"no@fx.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 32], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/current_user_concern.rb:10:in `set_current_user'
+  [1m[36mUser Load (3.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "no@fx.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:6:in `create'
+Completed 200 OK in 276ms (Views: 0.5ms | ActiveRecord: 3.7ms | Allocations: 1599)
+
+
+Started GET "/logged_in" for ::1 at 2020-04-28 13:39:50 -0500
+Processing by SessionsController#logged_in as HTML
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 32], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/current_user_concern.rb:10:in `set_current_user'
+Completed 200 OK in 32ms (Views: 4.9ms | ActiveRecord: 2.4ms | Allocations: 1060)
+
+
+Started GET "/logged_in" for ::1 at 2020-04-28 13:43:08 -0500
+Processing by SessionsController#logged_in as HTML
+  [1m[36mUser Load (33.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 32], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/current_user_concern.rb:10:in `set_current_user'
+Completed 200 OK in 111ms (Views: 19.2ms | ActiveRecord: 33.8ms | Allocations: 976)
+
+
+Started GET "/logged_in" for ::1 at 2020-04-28 13:44:30 -0500
+Processing by SessionsController#logged_in as HTML
+  [1m[36mUser Load (111.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 32], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/current_user_concern.rb:10:in `set_current_user'
+Completed 200 OK in 123ms (Views: 1.8ms | ActiveRecord: 111.0ms | Allocations: 978)
+
+
+Started GET "/logged_in" for ::1 at 2020-04-28 13:52:48 -0500
+Processing by SessionsController#logged_in as HTML
+  [1m[36mUser Load (19.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 32], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/current_user_concern.rb:10:in `set_current_user'
+Completed 200 OK in 202ms (Views: 3.3ms | ActiveRecord: 136.0ms | Allocations: 1059)
+
+
+Started GET "/logged_in" for ::1 at 2020-04-28 13:56:53 -0500
+Processing by SessionsController#logged_in as HTML
+  [1m[36mUser Load (15.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 32], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/current_user_concern.rb:10:in `set_current_user'
+Completed 200 OK in 24ms (Views: 0.9ms | ActiveRecord: 15.8ms | Allocations: 983)
+
+
+Started GET "/logged_in" for ::1 at 2020-04-28 13:58:47 -0500
+Processing by SessionsController#logged_in as HTML
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 32], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/current_user_concern.rb:10:in `set_current_user'
+Completed 200 OK in 7ms (Views: 0.8ms | ActiveRecord: 1.4ms | Allocations: 973)
+
+
+Started GET "/logged_in" for ::1 at 2020-04-28 13:59:04 -0500
+Processing by SessionsController#logged_in as HTML
+  [1m[36mUser Load (176.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 32], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/current_user_concern.rb:10:in `set_current_user'
+Completed 200 OK in 180ms (Views: 0.5ms | ActiveRecord: 176.8ms | Allocations: 976)
+
+
+Started GET "/logged_in" for ::1 at 2020-04-28 14:02:48 -0500
+Processing by SessionsController#logged_in as HTML
+  [1m[36mUser Load (56.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 32], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/current_user_concern.rb:10:in `set_current_user'
+Completed 200 OK in 82ms (Views: 4.9ms | ActiveRecord: 56.2ms | Allocations: 978)
+
+
+Started GET "/logged_in" for ::1 at 2020-04-28 14:02:52 -0500
+Processing by SessionsController#logged_in as HTML
+  [1m[36mUser Load (76.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 32], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/current_user_concern.rb:10:in `set_current_user'
+Completed 200 OK in 84ms (Views: 1.3ms | ActiveRecord: 76.0ms | Allocations: 974)
+
+
+Started GET "/logged_in" for ::1 at 2020-04-28 14:30:39 -0500
+Processing by SessionsController#logged_in as HTML
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 32], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/current_user_concern.rb:10:in `set_current_user'
+Completed 200 OK in 53ms (Views: 8.4ms | ActiveRecord: 13.5ms | Allocations: 1057)
+
+
+Started GET "/logged_in" for ::1 at 2020-04-28 14:34:15 -0500
+Processing by SessionsController#logged_in as HTML
+  [1m[36mUser Load (22.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 32], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/current_user_concern.rb:10:in `set_current_user'
+Completed 200 OK in 27ms (Views: 0.8ms | ActiveRecord: 22.6ms | Allocations: 976)
+
+
+Started GET "/logged_in" for ::1 at 2020-04-28 14:38:39 -0500
+Processing by SessionsController#logged_in as HTML
+  [1m[36mUser Load (93.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 32], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/current_user_concern.rb:10:in `set_current_user'
+Completed 200 OK in 102ms (Views: 3.1ms | ActiveRecord: 93.6ms | Allocations: 971)
+
+
+Started GET "/logged_in" for ::1 at 2020-04-28 14:39:12 -0500
+Processing by SessionsController#logged_in as HTML
+  [1m[36mUser Load (41.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 32], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/current_user_concern.rb:10:in `set_current_user'
+Completed 200 OK in 46ms (Views: 0.8ms | ActiveRecord: 41.8ms | Allocations: 975)
+
+
+Started GET "/logged_in" for ::1 at 2020-04-28 14:43:58 -0500
+Processing by SessionsController#logged_in as HTML
+  [1m[36mUser Load (10.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 32], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/current_user_concern.rb:10:in `set_current_user'
+Completed 200 OK in 15ms (Views: 1.1ms | ActiveRecord: 10.2ms | Allocations: 973)
+
+
+Started GET "/logged_in" for ::1 at 2020-04-28 14:44:55 -0500
+Processing by SessionsController#logged_in as HTML
+  [1m[36mUser Load (47.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 32], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/current_user_concern.rb:10:in `set_current_user'
+Completed 200 OK in 54ms (Views: 1.2ms | ActiveRecord: 47.8ms | Allocations: 977)
+
+
+Started GET "/logged_in" for ::1 at 2020-04-28 14:45:04 -0500
+Processing by SessionsController#logged_in as HTML
+  [1m[36mUser Load (46.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 32], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/current_user_concern.rb:10:in `set_current_user'
+Completed 200 OK in 50ms (Views: 0.9ms | ActiveRecord: 46.8ms | Allocations: 973)
+
+
+Started GET "/logged_in" for ::1 at 2020-04-28 14:45:11 -0500
+Processing by SessionsController#logged_in as HTML
+  [1m[36mUser Load (47.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 32], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/current_user_concern.rb:10:in `set_current_user'
+Completed 200 OK in 54ms (Views: 0.8ms | ActiveRecord: 47.3ms | Allocations: 978)
+
+
+Started GET "/logged_in" for ::1 at 2020-04-28 14:45:17 -0500
+Processing by SessionsController#logged_in as HTML
+  [1m[36mUser Load (54.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 32], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/current_user_concern.rb:10:in `set_current_user'
+Completed 200 OK in 58ms (Views: 0.6ms | ActiveRecord: 54.2ms | Allocations: 978)
+
+
+Started GET "/logged_in" for ::1 at 2020-04-28 14:45:24 -0500
+Processing by SessionsController#logged_in as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 32], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/current_user_concern.rb:10:in `set_current_user'
+Completed 200 OK in 4ms (Views: 0.6ms | ActiveRecord: 0.7ms | Allocations: 972)
+
+
+Started GET "/logged_in" for ::1 at 2020-04-28 14:45:31 -0500
+Processing by SessionsController#logged_in as HTML
+  [1m[36mUser Load (43.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 32], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/current_user_concern.rb:10:in `set_current_user'
+Completed 200 OK in 48ms (Views: 0.9ms | ActiveRecord: 43.9ms | Allocations: 976)
+
+
+Started GET "/logged_in" for ::1 at 2020-04-28 14:45:36 -0500
+Processing by SessionsController#logged_in as HTML
+  [1m[36mUser Load (148.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 32], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/current_user_concern.rb:10:in `set_current_user'
+Completed 200 OK in 152ms (Views: 0.8ms | ActiveRecord: 148.4ms | Allocations: 971)
+
+
+Started GET "/logged_in" for ::1 at 2020-04-28 14:45:47 -0500
+Processing by SessionsController#logged_in as HTML
+  [1m[36mUser Load (49.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 32], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/current_user_concern.rb:10:in `set_current_user'
+Completed 200 OK in 57ms (Views: 1.7ms | ActiveRecord: 49.4ms | Allocations: 976)
+
+
+Started GET "/logged_in" for ::1 at 2020-04-28 14:49:33 -0500
+Processing by SessionsController#logged_in as HTML
+  [1m[36mUser Load (59.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 32], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/current_user_concern.rb:10:in `set_current_user'
+Completed 200 OK in 63ms (Views: 0.7ms | ActiveRecord: 59.4ms | Allocations: 975)
+
+
+Started GET "/logged_in" for ::1 at 2020-04-28 14:58:01 -0500
+Processing by SessionsController#logged_in as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 32], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/current_user_concern.rb:10:in `set_current_user'
+Completed 200 OK in 22ms (Views: 0.8ms | ActiveRecord: 14.6ms | Allocations: 1057)
+
+
+Started GET "/logged_in" for ::1 at 2020-04-28 14:58:50 -0500
+Processing by SessionsController#logged_in as HTML
+  [1m[36mUser Load (5.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 32], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/current_user_concern.rb:10:in `set_current_user'
+Completed 200 OK in 11ms (Views: 0.9ms | ActiveRecord: 5.8ms | Allocations: 979)
+
+
+Started GET "/logged_in" for ::1 at 2020-04-28 14:58:56 -0500
+Processing by SessionsController#logged_in as HTML
+  [1m[36mUser Load (57.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 32], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/current_user_concern.rb:10:in `set_current_user'
+Completed 200 OK in 63ms (Views: 1.8ms | ActiveRecord: 57.5ms | Allocations: 975)
+
+
+Started GET "/logged_in" for ::1 at 2020-04-28 16:43:07 -0500
+Processing by SessionsController#logged_in as HTML
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 32], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/current_user_concern.rb:10:in `set_current_user'
+Completed 200 OK in 61ms (Views: 11.1ms | ActiveRecord: 16.0ms | Allocations: 1063)
+
+
+Started GET "/logged_in" for ::1 at 2020-04-28 16:45:21 -0500
+Processing by SessionsController#logged_in as HTML
+  [1m[36mUser Load (10.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 32], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/current_user_concern.rb:10:in `set_current_user'
+Completed 200 OK in 15ms (Views: 0.6ms | ActiveRecord: 10.0ms | Allocations: 977)
+
+
+Started GET "/logged_in" for ::1 at 2020-04-28 16:45:38 -0500
+Processing by SessionsController#logged_in as HTML
+  [1m[36mUser Load (20.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 32], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/current_user_concern.rb:10:in `set_current_user'
+Completed 200 OK in 28ms (Views: 1.2ms | ActiveRecord: 20.4ms | Allocations: 972)
+
+
+Started POST "/registrations" for ::1 at 2020-04-28 16:46:19 -0500
+Processing by RegistrationsController#create as HTML
+  Parameters: {"user"=>{"email"=>"plant@lady.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "registration"=>{"user"=>{"email"=>"plant@lady.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}}
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/registrations_controller.rb:3:in `create'
+  [1m[36mUser Exists? (1.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "plant@lady.com"], ["LIMIT", 1]]
+  ↳ app/controllers/registrations_controller.rb:3:in `create'
+  [1m[36mUser Create (7.6ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["email", "plant@lady.com"], ["password_digest", "$2a$12$6B2seGkwJZr.2BQMzZR54eHQuIrSO.ByQGsmN.8jrzA.uahCrfmQy"], ["created_at", "2020-04-28 21:46:19.515299"], ["updated_at", "2020-04-28 21:46:19.515299"]]
+  ↳ app/controllers/registrations_controller.rb:3:in `create'
+  [1m[35m (4.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/registrations_controller.rb:3:in `create'
+Completed 200 OK in 314ms (Views: 0.6ms | ActiveRecord: 13.8ms | Allocations: 3760)
+
+
+Started GET "/logged_in" for ::1 at 2020-04-28 16:46:35 -0500
+Processing by SessionsController#logged_in as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 33], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/current_user_concern.rb:10:in `set_current_user'
+Completed 200 OK in 8ms (Views: 3.0ms | ActiveRecord: 0.4ms | Allocations: 979)
+
+
+Started GET "/logged_in" for ::1 at 2020-04-28 21:46:22 -0500
+Processing by SessionsController#logged_in as HTML
+  [1m[36mUser Load (2.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 33], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/current_user_concern.rb:10:in `set_current_user'
+Completed 200 OK in 29ms (Views: 3.4ms | ActiveRecord: 2.8ms | Allocations: 1057)
+
+
+Started POST "/registrations" for ::1 at 2020-04-28 21:47:53 -0500
+Processing by RegistrationsController#create as HTML
+  Parameters: {"user"=>{"email"=>"nola@home.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "registration"=>{"user"=>{"email"=>"nola@home.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/registrations_controller.rb:3:in `create'
+  [1m[36mUser Exists? (2.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "nola@home.com"], ["LIMIT", 1]]
+  ↳ app/controllers/registrations_controller.rb:3:in `create'
+  [1m[36mUser Create (6.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["email", "nola@home.com"], ["password_digest", "$2a$12$0r7T3KkPcLyZJvmb4w.H3uW1Zu/ohVMIU3Tr3Jn6ydVYC3odgbxrq"], ["created_at", "2020-04-29 02:47:53.611636"], ["updated_at", "2020-04-29 02:47:53.611636"]]
+  ↳ app/controllers/registrations_controller.rb:3:in `create'
+  [1m[35m (4.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/registrations_controller.rb:3:in `create'
+Completed 200 OK in 320ms (Views: 1.9ms | ActiveRecord: 13.0ms | Allocations: 3756)
+
+
+Started GET "/logged_in" for ::1 at 2020-04-28 21:51:53 -0500
+Processing by SessionsController#logged_in as HTML
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 34], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/current_user_concern.rb:10:in `set_current_user'
+Completed 200 OK in 25ms (Views: 4.0ms | ActiveRecord: 1.1ms | Allocations: 979)
+
+
+Started GET "/logged_in" for ::1 at 2020-04-28 21:54:46 -0500
+Processing by SessionsController#logged_in as HTML
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 34], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/current_user_concern.rb:10:in `set_current_user'
+Completed 200 OK in 8ms (Views: 1.8ms | ActiveRecord: 2.0ms | Allocations: 976)
+
+
+Started GET "/logged_in" for ::1 at 2020-04-28 21:56:40 -0500
+Processing by SessionsController#logged_in as HTML
+  [1m[36mUser Load (65.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 34], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/current_user_concern.rb:10:in `set_current_user'
+Completed 200 OK in 84ms (Views: 2.8ms | ActiveRecord: 65.0ms | Allocations: 974)
+
+
+Started GET "/logged_in" for ::1 at 2020-04-28 21:56:58 -0500
+Processing by SessionsController#logged_in as HTML
+  [1m[36mUser Load (4.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 34], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/current_user_concern.rb:10:in `set_current_user'
+Completed 200 OK in 9ms (Views: 0.4ms | ActiveRecord: 4.0ms | Allocations: 971)
+
+
+Started GET "/logged_in" for ::1 at 2020-04-28 22:00:25 -0500
+Processing by SessionsController#logged_in as HTML
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 34], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/current_user_concern.rb:10:in `set_current_user'
+Completed 200 OK in 6ms (Views: 1.0ms | ActiveRecord: 1.3ms | Allocations: 976)
+
+
+Started GET "/logged_in" for ::1 at 2020-04-28 22:01:37 -0500
+Processing by SessionsController#logged_in as HTML
+  [1m[36mUser Load (4.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 34], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/current_user_concern.rb:10:in `set_current_user'
+Completed 200 OK in 38ms (Views: 10.2ms | ActiveRecord: 4.5ms | Allocations: 975)
+
+
+Started GET "/logged_in" for ::1 at 2020-04-28 22:01:43 -0500
+Processing by SessionsController#logged_in as HTML
+  [1m[36mUser Load (3.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 34], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/current_user_concern.rb:10:in `set_current_user'
+Completed 200 OK in 7ms (Views: 0.4ms | ActiveRecord: 3.7ms | Allocations: 976)
+
+
+Started GET "/logged_in" for ::1 at 2020-04-28 22:03:09 -0500
+Processing by SessionsController#logged_in as HTML
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 34], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/current_user_concern.rb:10:in `set_current_user'
+Completed 200 OK in 14ms (Views: 3.1ms | ActiveRecord: 1.4ms | Allocations: 975)
+
+
+Started GET "/logged_in" for ::1 at 2020-04-28 22:05:32 -0500
+Processing by SessionsController#logged_in as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 34], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/current_user_concern.rb:10:in `set_current_user'
+Completed 200 OK in 7ms (Views: 0.7ms | ActiveRecord: 0.5ms | Allocations: 978)
+
+
+Started GET "/logged_in" for ::1 at 2020-04-28 22:28:42 -0500
+Processing by SessionsController#logged_in as HTML
+  [1m[36mUser Load (12.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 34], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/current_user_concern.rb:10:in `set_current_user'
+Completed 200 OK in 63ms (Views: 3.9ms | ActiveRecord: 13.2ms | Allocations: 1056)
+
+
+Started GET "/logged_in" for ::1 at 2020-04-28 22:34:34 -0500
+Processing by SessionsController#logged_in as HTML
+  [1m[36mUser Load (4.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 34], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/current_user_concern.rb:10:in `set_current_user'
+Completed 200 OK in 7ms (Views: 0.4ms | ActiveRecord: 4.2ms | Allocations: 975)
+
+
+Started GET "/logged_in" for ::1 at 2020-04-28 22:56:12 -0500
+Processing by SessionsController#logged_in as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 34], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/current_user_concern.rb:10:in `set_current_user'
+Completed 200 OK in 14ms (Views: 2.6ms | ActiveRecord: 1.4ms | Allocations: 1064)
+
+
+Started GET "/logged_in" for ::1 at 2020-04-28 23:30:52 -0500
+Processing by SessionsController#logged_in as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 34], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/current_user_concern.rb:10:in `set_current_user'
+Completed 200 OK in 72ms (Views: 3.5ms | ActiveRecord: 32.0ms | Allocations: 1057)
+
+
+Started GET "/logged_in" for ::1 at 2020-04-28 23:37:41 -0500
+Processing by SessionsController#logged_in as HTML
+  [1m[36mUser Load (19.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 34], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/current_user_concern.rb:10:in `set_current_user'
+Completed 200 OK in 25ms (Views: 0.7ms | ActiveRecord: 19.7ms | Allocations: 1059)
+
+
+Started GET "/logged_in" for ::1 at 2020-04-28 23:37:56 -0500
+Processing by SessionsController#logged_in as HTML
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 34], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/current_user_concern.rb:10:in `set_current_user'
+Completed 200 OK in 4ms (Views: 0.6ms | ActiveRecord: 1.3ms | Allocations: 974)
+
+
+Started GET "/logged_in" for ::1 at 2020-04-28 23:39:19 -0500
+Processing by SessionsController#logged_in as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 34], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/current_user_concern.rb:10:in `set_current_user'
+Completed 200 OK in 7ms (Views: 2.4ms | ActiveRecord: 0.9ms | Allocations: 973)
+
+
+Started GET "/logged_in" for ::1 at 2020-04-29 00:02:41 -0500
+Processing by SessionsController#logged_in as HTML
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 34], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/current_user_concern.rb:10:in `set_current_user'
+Completed 200 OK in 8ms (Views: 0.8ms | ActiveRecord: 1.8ms | Allocations: 1061)
+
+
+Started GET "/logged_in" for ::1 at 2020-04-29 00:03:59 -0500
+Processing by SessionsController#logged_in as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 34], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/current_user_concern.rb:10:in `set_current_user'
+Completed 200 OK in 4ms (Views: 0.6ms | ActiveRecord: 0.4ms | Allocations: 977)
+
+
+Started GET "/logged_in" for ::1 at 2020-04-29 00:04:34 -0500
+Processing by SessionsController#logged_in as HTML
+  [1m[36mUser Load (82.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 34], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/current_user_concern.rb:10:in `set_current_user'
+Completed 200 OK in 90ms (Views: 2.8ms | ActiveRecord: 82.7ms | Allocations: 978)
+
+
+Started GET "/logged_in" for ::1 at 2020-04-29 00:05:15 -0500
+Processing by SessionsController#logged_in as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 34], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/current_user_concern.rb:10:in `set_current_user'
+Completed 200 OK in 5ms (Views: 1.5ms | ActiveRecord: 0.4ms | Allocations: 980)
+
+
+Started GET "/logged_in" for ::1 at 2020-04-29 13:22:00 -0500
+Processing by SessionsController#logged_in as HTML
+  [1m[36mUser Load (3.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 34], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/current_user_concern.rb:10:in `set_current_user'
+Completed 200 OK in 54ms (Views: 8.9ms | ActiveRecord: 16.9ms | Allocations: 1062)
+
+
+Started GET "/logged_in" for ::1 at 2020-04-29 13:22:15 -0500
+Processing by SessionsController#logged_in as HTML
+  [1m[36mUser Load (74.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 34], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/current_user_concern.rb:10:in `set_current_user'
+Completed 200 OK in 80ms (Views: 0.9ms | ActiveRecord: 74.1ms | Allocations: 975)
+
+
+Started GET "/logged_in" for ::1 at 2020-04-29 13:39:42 -0500
+Processing by SessionsController#logged_in as HTML
+  [1m[36mUser Load (13.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 34], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/current_user_concern.rb:10:in `set_current_user'
+Completed 200 OK in 21ms (Views: 0.7ms | ActiveRecord: 15.7ms | Allocations: 1056)
+
+
+Started GET "/logged_in" for ::1 at 2020-04-29 17:17:45 -0500
+Processing by SessionsController#logged_in as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 34], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/current_user_concern.rb:10:in `set_current_user'
+Completed 200 OK in 15ms (Views: 0.7ms | ActiveRecord: 9.9ms | Allocations: 1056)
+
+
+Started GET "/" for ::1 at 2020-04-29 17:26:58 -0500
+Processing by StaticController#home as HTML
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 265)
+
+
+Started GET "/bikes" for ::1 at 2020-04-29 17:27:02 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/bikes"):
+  
+actionpack (6.0.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.2.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (6.0.2.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.2.2) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.2.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.2.2) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.2.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.2.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.2.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.2) lib/rack/method_override.rb:24:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.2.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.2.2) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.2.2) lib/action_dispatch/middleware/host_authorization.rb:83:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+webpacker (4.2.2) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.2.2) lib/rails/engine.rb:526:in `call'
+puma (4.3.3) lib/puma/configuration.rb:228:in `call'
+puma (4.3.3) lib/puma/server.rb:682:in `handle_request'
+puma (4.3.3) lib/puma/server.rb:472:in `process_client'
+puma (4.3.3) lib/puma/server.rb:328:in `block in run'
+puma (4.3.3) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/" for ::1 at 2020-04-29 17:39:26 -0500
+Processing by StaticController#home as HTML
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 0.0ms | Allocations: 4358)
+
+
+  
+NameError (uninitialized constant StaticController::Bikes):
+  
+app/controllers/static_controller.rb:4:in `home'
+Started GET "/" for ::1 at 2020-04-29 17:39:40 -0500
+Processing by StaticController#home as HTML
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/static_controller.rb:5:in `home'
+  [1m[36mBike Load (3.9ms)[0m  [1m[34mSELECT "bikes".* FROM "bikes"[0m
+  ↳ app/controllers/static_controller.rb:5:in `home'
+Completed 200 OK in 101ms (Views: 38.9ms | ActiveRecord: 36.5ms | Allocations: 26846)
+
+
+Started GET "/logged_in" for ::1 at 2020-04-29 17:42:20 -0500
+Processing by SessionsController#logged_in as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 34], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/current_user_concern.rb:10:in `set_current_user'
+Completed 200 OK in 16ms (Views: 0.7ms | ActiveRecord: 4.8ms | Allocations: 1152)
+
+
+Started GET "/logged_in" for ::1 at 2020-04-29 17:56:00 -0500
+Processing by SessionsController#logged_in as HTML
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 34], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/current_user_concern.rb:10:in `set_current_user'
+Completed 200 OK in 24ms (Views: 6.4ms | ActiveRecord: 2.0ms | Allocations: 1057)
+
+
+Started GET "/logged_in" for ::1 at 2020-04-29 17:59:12 -0500
+Processing by SessionsController#logged_in as HTML
+  [1m[36mUser Load (63.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 34], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/current_user_concern.rb:10:in `set_current_user'
+Completed 200 OK in 68ms (Views: 0.8ms | ActiveRecord: 63.6ms | Allocations: 974)
+
+
+Started GET "/logged_in" for ::1 at 2020-04-29 17:59:45 -0500
+Processing by SessionsController#logged_in as HTML
+  [1m[36mUser Load (90.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 34], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/current_user_concern.rb:10:in `set_current_user'
+Completed 200 OK in 103ms (Views: 4.7ms | ActiveRecord: 90.8ms | Allocations: 979)
+
+
+Started GET "/logged_in" for ::1 at 2020-04-29 17:59:48 -0500
+Processing by SessionsController#logged_in as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 34], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/current_user_concern.rb:10:in `set_current_user'
+Completed 200 OK in 5ms (Views: 1.0ms | ActiveRecord: 0.7ms | Allocations: 977)
+
+
+Started GET "/logged_in" for ::1 at 2020-04-29 18:00:00 -0500
+Processing by SessionsController#logged_in as HTML
+  [1m[36mUser Load (30.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 34], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/current_user_concern.rb:10:in `set_current_user'
+Completed 200 OK in 36ms (Views: 0.7ms | ActiveRecord: 30.7ms | Allocations: 981)
+
+
+Started GET "/logged_in" for ::1 at 2020-04-29 18:00:02 -0500
+Processing by SessionsController#logged_in as HTML
+  [1m[36mUser Load (34.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 34], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/current_user_concern.rb:10:in `set_current_user'
+Completed 200 OK in 38ms (Views: 0.8ms | ActiveRecord: 34.0ms | Allocations: 979)
+
+
+Started GET "/logged_in" for ::1 at 2020-04-29 18:00:04 -0500
+Processing by SessionsController#logged_in as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 34], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/current_user_concern.rb:10:in `set_current_user'
+Completed 200 OK in 234ms (Views: 0.4ms | ActiveRecord: 0.4ms | Allocations: 981)
+
+
+Started GET "/logged_in" for ::1 at 2020-04-29 18:00:21 -0500
+Processing by SessionsController#logged_in as HTML
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 34], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/current_user_concern.rb:10:in `set_current_user'
+Completed 200 OK in 7ms (Views: 0.6ms | ActiveRecord: 1.1ms | Allocations: 977)
+
+
+Started GET "/logged_in" for ::1 at 2020-04-29 18:00:24 -0500
+Processing by SessionsController#logged_in as HTML
+  [1m[36mUser Load (54.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 34], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/current_user_concern.rb:10:in `set_current_user'
+Completed 200 OK in 58ms (Views: 0.6ms | ActiveRecord: 54.1ms | Allocations: 974)
+
+
+Started GET "/logged_in" for ::1 at 2020-04-30 10:55:43 -0500
+  [1m[35m (3.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SessionsController#logged_in as HTML
+  [1m[36mUser Load (6.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 34], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/current_user_concern.rb:10:in `set_current_user'
+Completed 200 OK in 126ms (Views: 2.0ms | ActiveRecord: 19.4ms | Allocations: 12209)
+
+
+Started GET "/logged_in" for ::1 at 2020-04-30 10:56:32 -0500
+Processing by SessionsController#logged_in as HTML
+  [1m[36mUser Load (11.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 34], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/current_user_concern.rb:10:in `set_current_user'
+Completed 200 OK in 16ms (Views: 0.9ms | ActiveRecord: 11.6ms | Allocations: 992)
+
+
+Started GET "/logged_in" for ::1 at 2020-04-30 10:56:54 -0500
+Processing by SessionsController#logged_in as HTML
+  [1m[36mUser Load (37.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 34], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/current_user_concern.rb:10:in `set_current_user'
+Completed 200 OK in 42ms (Views: 0.8ms | ActiveRecord: 37.9ms | Allocations: 989)
+
+
+Started GET "/logged_in" for ::1 at 2020-04-30 10:57:15 -0500
+Processing by SessionsController#logged_in as HTML
+  [1m[36mUser Load (25.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 34], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/current_user_concern.rb:10:in `set_current_user'
+Completed 200 OK in 31ms (Views: 0.7ms | ActiveRecord: 25.8ms | Allocations: 993)
+
+
+Started GET "/logged_in" for ::1 at 2020-05-01 11:07:49 -0500
+Processing by SessionsController#logged_in as HTML
+  [1m[36mUser Load (12.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 34], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/current_user_concern.rb:10:in `set_current_user'
+Completed 200 OK in 70ms (Views: 3.1ms | ActiveRecord: 17.3ms | Allocations: 1069)
+
+
+Started GET "/logged_in" for ::1 at 2020-05-01 11:14:06 -0500
+Processing by SessionsController#logged_in as HTML
+  [1m[36mUser Load (23.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 34], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/current_user_concern.rb:10:in `set_current_user'
+Completed 200 OK in 36ms (Views: 0.7ms | ActiveRecord: 28.2ms | Allocations: 1056)
+
+
+Started GET "/logged_in" for ::1 at 2020-05-01 11:14:09 -0500
+Processing by SessionsController#logged_in as HTML
+  [1m[36mUser Load (98.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 34], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/current_user_concern.rb:10:in `set_current_user'
+Completed 200 OK in 111ms (Views: 3.7ms | ActiveRecord: 98.9ms | Allocations: 976)
+
+
+Started GET "/logged_in" for ::1 at 2020-05-01 11:14:45 -0500
+Processing by SessionsController#logged_in as HTML
+  [1m[36mUser Load (44.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 34], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/current_user_concern.rb:10:in `set_current_user'
+Completed 200 OK in 50ms (Views: 0.7ms | ActiveRecord: 44.2ms | Allocations: 979)
+
+
+Started GET "/logged_in" for ::1 at 2020-05-01 11:15:00 -0500
+Processing by SessionsController#logged_in as HTML
+  [1m[36mUser Load (36.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 34], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/current_user_concern.rb:10:in `set_current_user'
+Completed 200 OK in 43ms (Views: 0.7ms | ActiveRecord: 36.7ms | Allocations: 980)
+
+
+Started GET "/logged_in" for ::1 at 2020-05-01 11:15:02 -0500
+Processing by SessionsController#logged_in as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 34], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/current_user_concern.rb:10:in `set_current_user'
+Completed 200 OK in 4ms (Views: 0.7ms | ActiveRecord: 0.6ms | Allocations: 979)
+
+
+Started GET "/logged_in" for ::1 at 2020-05-01 16:56:23 -0500
+Processing by SessionsController#logged_in as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 34], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/current_user_concern.rb:10:in `set_current_user'
+Completed 200 OK in 15ms (Views: 2.7ms | ActiveRecord: 1.0ms | Allocations: 1058)
+
+
+Started GET "/logged_in" for ::1 at 2020-05-01 17:02:58 -0500
+Processing by SessionsController#logged_in as HTML
+  [1m[36mUser Load (6.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 34], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/current_user_concern.rb:10:in `set_current_user'
+Completed 200 OK in 40ms (Views: 2.0ms | ActiveRecord: 16.5ms | Allocations: 1058)
+
+
+Started GET "/logged_in" for ::1 at 2020-05-01 20:15:40 -0500
+Processing by SessionsController#logged_in as HTML
+  [1m[36mUser Load (4.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 34], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/current_user_concern.rb:10:in `set_current_user'
+Completed 200 OK in 78ms (Views: 12.9ms | ActiveRecord: 12.6ms | Allocations: 1063)
+
+
+Started GET "/logged_in" for ::1 at 2020-05-01 20:16:00 -0500
+Processing by SessionsController#logged_in as HTML
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 34], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/current_user_concern.rb:10:in `set_current_user'
+Completed 200 OK in 179ms (Views: 0.8ms | ActiveRecord: 1.2ms | Allocations: 979)
+
+
+Started GET "/logged_in" for ::1 at 2020-05-01 20:16:34 -0500
+Processing by SessionsController#logged_in as HTML
+  [1m[36mUser Load (7.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 34], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/current_user_concern.rb:10:in `set_current_user'
+Completed 200 OK in 13ms (Views: 1.4ms | ActiveRecord: 7.9ms | Allocations: 976)
+
+
+Started GET "/logged_in" for ::1 at 2020-05-01 20:19:15 -0500
+Processing by SessionsController#logged_in as HTML
+  [1m[36mUser Load (114.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 34], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/current_user_concern.rb:10:in `set_current_user'
+Completed 200 OK in 117ms (Views: 0.5ms | ActiveRecord: 114.0ms | Allocations: 979)
+
+
+Started GET "/logged_in" for ::1 at 2020-05-01 20:20:21 -0500
+Processing by SessionsController#logged_in as HTML
+  [1m[36mUser Load (62.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 34], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/current_user_concern.rb:10:in `set_current_user'
+Completed 200 OK in 68ms (Views: 1.5ms | ActiveRecord: 62.3ms | Allocations: 976)
+
+
+Started GET "/logged_in" for ::1 at 2020-05-01 20:21:53 -0500
+Processing by SessionsController#logged_in as HTML
+  [1m[36mUser Load (138.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 34], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/current_user_concern.rb:10:in `set_current_user'
+Completed 200 OK in 141ms (Views: 0.5ms | ActiveRecord: 138.3ms | Allocations: 982)
+
+
+Started GET "/logged_in" for ::1 at 2020-05-01 20:22:24 -0500
+Processing by SessionsController#logged_in as HTML
+  [1m[36mUser Load (5.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 34], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/current_user_concern.rb:10:in `set_current_user'
+Completed 200 OK in 11ms (Views: 0.5ms | ActiveRecord: 5.3ms | Allocations: 974)
+
+
+Started GET "/users" for ::1 at 2020-05-03 13:39:09 -0500
+  [1m[35m (2.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (No route matches [GET] "/users"):
+  
+actionpack (6.0.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.2.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (6.0.2.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.2.2) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.2.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.2.2) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.2.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.2.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.2.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.2) lib/rack/method_override.rb:24:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.2.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.2.2) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.2.2) lib/action_dispatch/middleware/host_authorization.rb:83:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+webpacker (4.2.2) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.2.2) lib/rails/engine.rb:526:in `call'
+puma (4.3.3) lib/puma/configuration.rb:228:in `call'
+puma (4.3.3) lib/puma/server.rb:682:in `handle_request'
+puma (4.3.3) lib/puma/server.rb:472:in `process_client'
+puma (4.3.3) lib/puma/server.rb:328:in `block in run'
+puma (4.3.3) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/users" for ::1 at 2020-05-03 13:43:45 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/users"):
+  
+actionpack (6.0.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.2.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (6.0.2.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.2.2) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.2.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.2.2) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.2.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.2.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.2.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.2) lib/rack/method_override.rb:24:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.2.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.2.2) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.2.2) lib/action_dispatch/middleware/host_authorization.rb:83:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+webpacker (4.2.2) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.2.2) lib/rails/engine.rb:526:in `call'
+puma (4.3.3) lib/puma/configuration.rb:228:in `call'
+puma (4.3.3) lib/puma/server.rb:682:in `handle_request'
+puma (4.3.3) lib/puma/server.rb:472:in `process_client'
+puma (4.3.3) lib/puma/server.rb:328:in `block in run'
+puma (4.3.3) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/users" for ::1 at 2020-05-03 13:44:50 -0500
+  
+ActionController::RoutingError (uninitialized constant ApplicationConroller
+Did you mean?  ApplicationController):
+  
+app/controllers/users_controller.rb:1:in `<main>'
+Started GET "/users" for ::1 at 2020-05-03 13:45:15 -0500
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (3.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:5:in `index'
+  [1m[36mOwner Load (5.3ms)[0m  [1m[34mSELECT "owners".* FROM "owners" WHERE "owners"."user_id" = $1[0m  [["user_id", 11]]
+  ↳ app/controllers/users_controller.rb:5:in `index'
+  [1m[36mRenter Load (4.8ms)[0m  [1m[34mSELECT "renters".* FROM "renters" WHERE "renters"."user_id" = $1[0m  [["user_id", 11]]
+  ↳ app/controllers/users_controller.rb:5:in `index'
+Completed 500 Internal Server Error in 347ms (ActiveRecord: 108.5ms | Allocations: 29330)
+
+
+  
+NoMethodError (undefined method `bikes' for #<User:0x00007feac8da09c0>):
+  
+app/controllers/users_controller.rb:5:in `index'
+Started GET "/users" for ::1 at 2020-05-03 13:45:30 -0500
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:5:in `index'
+  [1m[36mOwner Load (0.4ms)[0m  [1m[34mSELECT "owners".* FROM "owners" WHERE "owners"."user_id" = $1[0m  [["user_id", 11]]
+  ↳ app/controllers/users_controller.rb:5:in `index'
+  [1m[36mRenter Load (1.6ms)[0m  [1m[34mSELECT "renters".* FROM "renters" WHERE "renters"."user_id" = $1[0m  [["user_id", 11]]
+  ↳ app/controllers/users_controller.rb:5:in `index'
+Completed 500 Internal Server Error in 273ms (ActiveRecord: 105.9ms | Allocations: 25468)
+
+
+  
+NoMethodError (undefined method `bike' for #<User:0x00007feac9b0a0e8>):
+  
+app/controllers/users_controller.rb:5:in `index'
+Started GET "/users" for ::1 at 2020-05-03 13:45:45 -0500
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (3.9ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:5:in `index'
+  [1m[36mOwner Load (0.3ms)[0m  [1m[34mSELECT "owners".* FROM "owners" WHERE "owners"."user_id" = $1[0m  [["user_id", 11]]
+  ↳ app/controllers/users_controller.rb:5:in `index'
+  [1m[36mRenter Load (1.9ms)[0m  [1m[34mSELECT "renters".* FROM "renters" WHERE "renters"."user_id" = $1[0m  [["user_id", 11]]
+  ↳ app/controllers/users_controller.rb:5:in `index'
+Completed 500 Internal Server Error in 273ms (ActiveRecord: 168.2ms | Allocations: 25486)
+
+
+  
+NoMethodError (undefined method `posts' for #<User:0x00007feac9b3d6c8>):
+  
+app/controllers/users_controller.rb:5:in `index'
+Started GET "/users" for ::1 at 2020-05-03 13:45:55 -0500
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:5:in `index'
+  [1m[36mOwner Load (1.4ms)[0m  [1m[34mSELECT "owners".* FROM "owners" WHERE "owners"."user_id" = $1[0m  [["user_id", 11]]
+  ↳ app/controllers/users_controller.rb:5:in `index'
+  [1m[36mRenter Load (2.1ms)[0m  [1m[34mSELECT "renters".* FROM "renters" WHERE "renters"."user_id" = $1[0m  [["user_id", 11]]
+  ↳ app/controllers/users_controller.rb:5:in `index'
+  [1m[36mOwner Load (1.7ms)[0m  [1m[34mSELECT "owners".* FROM "owners" WHERE "owners"."user_id" = $1[0m  [["user_id", 12]]
+  ↳ app/controllers/users_controller.rb:5:in `index'
+  [1m[36mRenter Load (17.8ms)[0m  [1m[34mSELECT "renters".* FROM "renters" WHERE "renters"."user_id" = $1[0m  [["user_id", 12]]
+  ↳ app/controllers/users_controller.rb:5:in `index'
+  [1m[36mOwner Load (3.7ms)[0m  [1m[34mSELECT "owners".* FROM "owners" WHERE "owners"."user_id" = $1[0m  [["user_id", 13]]
+  ↳ app/controllers/users_controller.rb:5:in `index'
+  [1m[36mRenter Load (17.7ms)[0m  [1m[34mSELECT "renters".* FROM "renters" WHERE "renters"."user_id" = $1[0m  [["user_id", 13]]
+  ↳ app/controllers/users_controller.rb:5:in `index'
+  [1m[36mOwner Load (1.0ms)[0m  [1m[34mSELECT "owners".* FROM "owners" WHERE "owners"."user_id" = $1[0m  [["user_id", 14]]
+  ↳ app/controllers/users_controller.rb:5:in `index'
+  [1m[36mRenter Load (0.7ms)[0m  [1m[34mSELECT "renters".* FROM "renters" WHERE "renters"."user_id" = $1[0m  [["user_id", 14]]
+  ↳ app/controllers/users_controller.rb:5:in `index'
+  [1m[36mOwner Load (1.8ms)[0m  [1m[34mSELECT "owners".* FROM "owners" WHERE "owners"."user_id" = $1[0m  [["user_id", 15]]
+  ↳ app/controllers/users_controller.rb:5:in `index'
+  [1m[36mRenter Load (1.9ms)[0m  [1m[34mSELECT "renters".* FROM "renters" WHERE "renters"."user_id" = $1[0m  [["user_id", 15]]
+  ↳ app/controllers/users_controller.rb:5:in `index'
+  [1m[36mOwner Load (3.6ms)[0m  [1m[34mSELECT "owners".* FROM "owners" WHERE "owners"."user_id" = $1[0m  [["user_id", 16]]
+  ↳ app/controllers/users_controller.rb:5:in `index'
+  [1m[36mRenter Load (4.1ms)[0m  [1m[34mSELECT "renters".* FROM "renters" WHERE "renters"."user_id" = $1[0m  [["user_id", 16]]
+  ↳ app/controllers/users_controller.rb:5:in `index'
+  [1m[36mOwner Load (4.0ms)[0m  [1m[34mSELECT "owners".* FROM "owners" WHERE "owners"."user_id" = $1[0m  [["user_id", 17]]
+  ↳ app/controllers/users_controller.rb:5:in `index'
+  [1m[36mRenter Load (4.4ms)[0m  [1m[34mSELECT "renters".* FROM "renters" WHERE "renters"."user_id" = $1[0m  [["user_id", 17]]
+  ↳ app/controllers/users_controller.rb:5:in `index'
+  [1m[36mOwner Load (0.8ms)[0m  [1m[34mSELECT "owners".* FROM "owners" WHERE "owners"."user_id" = $1[0m  [["user_id", 18]]
+  ↳ app/controllers/users_controller.rb:5:in `index'
+  [1m[36mRenter Load (3.6ms)[0m  [1m[34mSELECT "renters".* FROM "renters" WHERE "renters"."user_id" = $1[0m  [["user_id", 18]]
+  ↳ app/controllers/users_controller.rb:5:in `index'
+  [1m[36mOwner Load (5.2ms)[0m  [1m[34mSELECT "owners".* FROM "owners" WHERE "owners"."user_id" = $1[0m  [["user_id", 19]]
+  ↳ app/controllers/users_controller.rb:5:in `index'
+  [1m[36mRenter Load (0.3ms)[0m  [1m[34mSELECT "renters".* FROM "renters" WHERE "renters"."user_id" = $1[0m  [["user_id", 19]]
+  ↳ app/controllers/users_controller.rb:5:in `index'
+  [1m[36mOwner Load (11.9ms)[0m  [1m[34mSELECT "owners".* FROM "owners" WHERE "owners"."user_id" = $1[0m  [["user_id", 20]]
+  ↳ app/controllers/users_controller.rb:5:in `index'
+  [1m[36mRenter Load (9.0ms)[0m  [1m[34mSELECT "renters".* FROM "renters" WHERE "renters"."user_id" = $1[0m  [["user_id", 20]]
+  ↳ app/controllers/users_controller.rb:5:in `index'
+  [1m[36mOwner Load (6.3ms)[0m  [1m[34mSELECT "owners".* FROM "owners" WHERE "owners"."user_id" = $1[0m  [["user_id", 21]]
+  ↳ app/controllers/users_controller.rb:5:in `index'
+  [1m[36mRenter Load (0.4ms)[0m  [1m[34mSELECT "renters".* FROM "renters" WHERE "renters"."user_id" = $1[0m  [["user_id", 21]]
+  ↳ app/controllers/users_controller.rb:5:in `index'
+  [1m[36mOwner Load (11.6ms)[0m  [1m[34mSELECT "owners".* FROM "owners" WHERE "owners"."user_id" = $1[0m  [["user_id", 22]]
+  ↳ app/controllers/users_controller.rb:5:in `index'
+  [1m[36mRenter Load (0.3ms)[0m  [1m[34mSELECT "renters".* FROM "renters" WHERE "renters"."user_id" = $1[0m  [["user_id", 22]]
+  ↳ app/controllers/users_controller.rb:5:in `index'
+  [1m[36mOwner Load (1.0ms)[0m  [1m[34mSELECT "owners".* FROM "owners" WHERE "owners"."user_id" = $1[0m  [["user_id", 23]]
+  ↳ app/controllers/users_controller.rb:5:in `index'
+  [1m[36mRenter Load (5.6ms)[0m  [1m[34mSELECT "renters".* FROM "renters" WHERE "renters"."user_id" = $1[0m  [["user_id", 23]]
+  ↳ app/controllers/users_controller.rb:5:in `index'
+  [1m[36mOwner Load (0.4ms)[0m  [1m[34mSELECT "owners".* FROM "owners" WHERE "owners"."user_id" = $1[0m  [["user_id", 24]]
+  ↳ app/controllers/users_controller.rb:5:in `index'
+  [1m[36mRenter Load (0.3ms)[0m  [1m[34mSELECT "renters".* FROM "renters" WHERE "renters"."user_id" = $1[0m  [["user_id", 24]]
+  ↳ app/controllers/users_controller.rb:5:in `index'
+  [1m[36mOwner Load (0.3ms)[0m  [1m[34mSELECT "owners".* FROM "owners" WHERE "owners"."user_id" = $1[0m  [["user_id", 25]]
+  ↳ app/controllers/users_controller.rb:5:in `index'
+  [1m[36mRenter Load (1.5ms)[0m  [1m[34mSELECT "renters".* FROM "renters" WHERE "renters"."user_id" = $1[0m  [["user_id", 25]]
+  ↳ app/controllers/users_controller.rb:5:in `index'
+  [1m[36mOwner Load (1.7ms)[0m  [1m[34mSELECT "owners".* FROM "owners" WHERE "owners"."user_id" = $1[0m  [["user_id", 26]]
+  ↳ app/controllers/users_controller.rb:5:in `index'
+  [1m[36mRenter Load (0.7ms)[0m  [1m[34mSELECT "renters".* FROM "renters" WHERE "renters"."user_id" = $1[0m  [["user_id", 26]]
+  ↳ app/controllers/users_controller.rb:5:in `index'
+  [1m[36mOwner Load (3.1ms)[0m  [1m[34mSELECT "owners".* FROM "owners" WHERE "owners"."user_id" = $1[0m  [["user_id", 27]]
+  ↳ app/controllers/users_controller.rb:5:in `index'
+  [1m[36mRenter Load (4.0ms)[0m  [1m[34mSELECT "renters".* FROM "renters" WHERE "renters"."user_id" = $1[0m  [["user_id", 27]]
+  ↳ app/controllers/users_controller.rb:5:in `index'
+  [1m[36mOwner Load (5.5ms)[0m  [1m[34mSELECT "owners".* FROM "owners" WHERE "owners"."user_id" = $1[0m  [["user_id", 28]]
+  ↳ app/controllers/users_controller.rb:5:in `index'
+  [1m[36mRenter Load (6.0ms)[0m  [1m[34mSELECT "renters".* FROM "renters" WHERE "renters"."user_id" = $1[0m  [["user_id", 28]]
+  ↳ app/controllers/users_controller.rb:5:in `index'
+  [1m[36mOwner Load (0.8ms)[0m  [1m[34mSELECT "owners".* FROM "owners" WHERE "owners"."user_id" = $1[0m  [["user_id", 29]]
+  ↳ app/controllers/users_controller.rb:5:in `index'
+  [1m[36mRenter Load (3.9ms)[0m  [1m[34mSELECT "renters".* FROM "renters" WHERE "renters"."user_id" = $1[0m  [["user_id", 29]]
+  ↳ app/controllers/users_controller.rb:5:in `index'
+  [1m[36mOwner Load (1.2ms)[0m  [1m[34mSELECT "owners".* FROM "owners" WHERE "owners"."user_id" = $1[0m  [["user_id", 30]]
+  ↳ app/controllers/users_controller.rb:5:in `index'
+  [1m[36mRenter Load (6.3ms)[0m  [1m[34mSELECT "renters".* FROM "renters" WHERE "renters"."user_id" = $1[0m  [["user_id", 30]]
+  ↳ app/controllers/users_controller.rb:5:in `index'
+  [1m[36mOwner Load (8.9ms)[0m  [1m[34mSELECT "owners".* FROM "owners" WHERE "owners"."user_id" = $1[0m  [["user_id", 31]]
+  ↳ app/controllers/users_controller.rb:5:in `index'
+  [1m[36mRenter Load (4.9ms)[0m  [1m[34mSELECT "renters".* FROM "renters" WHERE "renters"."user_id" = $1[0m  [["user_id", 31]]
+  ↳ app/controllers/users_controller.rb:5:in `index'
+  [1m[36mOwner Load (2.1ms)[0m  [1m[34mSELECT "owners".* FROM "owners" WHERE "owners"."user_id" = $1[0m  [["user_id", 32]]
+  ↳ app/controllers/users_controller.rb:5:in `index'
+  [1m[36mRenter Load (17.8ms)[0m  [1m[34mSELECT "renters".* FROM "renters" WHERE "renters"."user_id" = $1[0m  [["user_id", 32]]
+  ↳ app/controllers/users_controller.rb:5:in `index'
+  [1m[36mOwner Load (1.8ms)[0m  [1m[34mSELECT "owners".* FROM "owners" WHERE "owners"."user_id" = $1[0m  [["user_id", 33]]
+  ↳ app/controllers/users_controller.rb:5:in `index'
+  [1m[36mRenter Load (1.1ms)[0m  [1m[34mSELECT "renters".* FROM "renters" WHERE "renters"."user_id" = $1[0m  [["user_id", 33]]
+  ↳ app/controllers/users_controller.rb:5:in `index'
+  [1m[36mOwner Load (25.1ms)[0m  [1m[34mSELECT "owners".* FROM "owners" WHERE "owners"."user_id" = $1[0m  [["user_id", 34]]
+  ↳ app/controllers/users_controller.rb:5:in `index'
+  [1m[36mRenter Load (5.6ms)[0m  [1m[34mSELECT "renters".* FROM "renters" WHERE "renters"."user_id" = $1[0m  [["user_id", 34]]
+  ↳ app/controllers/users_controller.rb:5:in `index'
+Completed 200 OK in 673ms (Views: 384.3ms | ActiveRecord: 282.5ms | Allocations: 71572)
+
+
+Started GET "/logged_in" for ::1 at 2020-05-03 13:51:09 -0500
+Processing by SessionsController#logged_in as HTML
+  [1m[36mUser Load (6.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 34], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/current_user_concern.rb:10:in `set_current_user'
+Completed 200 OK in 13ms (Views: 0.7ms | ActiveRecord: 6.8ms | Allocations: 1142)
+
+
+Started GET "/logged_in" for ::1 at 2020-05-03 13:51:17 -0500
+Processing by SessionsController#logged_in as HTML
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 34], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/current_user_concern.rb:10:in `set_current_user'
+Completed 200 OK in 7ms (Views: 0.6ms | ActiveRecord: 1.2ms | Allocations: 979)
+
+
+Started GET "/logged_in" for ::1 at 2020-05-03 13:51:25 -0500
+Processing by SessionsController#logged_in as HTML
+  [1m[36mUser Load (30.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 34], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/current_user_concern.rb:10:in `set_current_user'
+Completed 200 OK in 36ms (Views: 1.0ms | ActiveRecord: 30.5ms | Allocations: 978)
+
+
+Started GET "/logged_in" for ::1 at 2020-05-03 13:55:05 -0500
+Processing by SessionsController#logged_in as HTML
+  [1m[36mUser Load (10.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 34], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/current_user_concern.rb:10:in `set_current_user'
+Completed 200 OK in 13ms (Views: 0.6ms | ActiveRecord: 10.2ms | Allocations: 996)
+
+
+Started GET "/logged_in" for ::1 at 2020-05-03 13:55:48 -0500
+Processing by SessionsController#logged_in as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 34], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/current_user_concern.rb:10:in `set_current_user'
+Completed 200 OK in 3ms (Views: 0.5ms | ActiveRecord: 0.4ms | Allocations: 976)
+
+
+Started GET "/logged_in" for ::1 at 2020-05-03 13:59:35 -0500
+Processing by SessionsController#logged_in as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 34], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/current_user_concern.rb:10:in `set_current_user'
+Completed 200 OK in 4ms (Views: 0.9ms | ActiveRecord: 0.4ms | Allocations: 978)
+
+
+Started GET "/logged_in" for ::1 at 2020-05-03 13:59:59 -0500
+Processing by SessionsController#logged_in as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 34], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/current_user_concern.rb:10:in `set_current_user'
+Completed 200 OK in 3ms (Views: 0.7ms | ActiveRecord: 0.2ms | Allocations: 973)
+
+
+Started GET "/logged_in" for ::1 at 2020-05-03 14:04:32 -0500
+Processing by SessionsController#logged_in as HTML
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 34], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/current_user_concern.rb:10:in `set_current_user'
+Completed 200 OK in 11ms (Views: 1.2ms | ActiveRecord: 1.1ms | Allocations: 972)
+
+
+Started GET "/logged_in" for ::1 at 2020-05-03 14:11:16 -0500
+Processing by SessionsController#logged_in as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 34], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/current_user_concern.rb:10:in `set_current_user'
+Completed 200 OK in 24ms (Views: 3.0ms | ActiveRecord: 9.8ms | Allocations: 1057)
+
+
+Started GET "/logged_in" for ::1 at 2020-05-03 14:13:46 -0500
+Processing by SessionsController#logged_in as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 34], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/current_user_concern.rb:10:in `set_current_user'
+Completed 200 OK in 4ms (Views: 0.7ms | ActiveRecord: 0.5ms | Allocations: 981)
+
+
+Started GET "/logged_in" for ::1 at 2020-05-03 14:13:56 -0500
+Processing by SessionsController#logged_in as HTML
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 34], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/current_user_concern.rb:10:in `set_current_user'
+Completed 200 OK in 5ms (Views: 0.8ms | ActiveRecord: 1.1ms | Allocations: 975)
+
+
+Started GET "/logged_in" for ::1 at 2020-05-03 14:18:22 -0500
+Processing by SessionsController#logged_in as HTML
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 34], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/current_user_concern.rb:10:in `set_current_user'
+Completed 200 OK in 6ms (Views: 0.8ms | ActiveRecord: 1.3ms | Allocations: 976)
+
+
+Started GET "/logged_in" for ::1 at 2020-05-03 14:24:04 -0500
+Processing by SessionsController#logged_in as HTML
+  [1m[36mUser Load (72.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 34], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/current_user_concern.rb:10:in `set_current_user'
+Completed 200 OK in 96ms (Views: 5.1ms | ActiveRecord: 72.6ms | Allocations: 975)
+
+
+Started GET "/logged_in" for ::1 at 2020-05-03 14:27:43 -0500
+Processing by SessionsController#logged_in as HTML
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 34], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/current_user_concern.rb:10:in `set_current_user'
+Completed 200 OK in 9ms (Views: 0.8ms | ActiveRecord: 1.8ms | Allocations: 971)
+
+
+Started GET "/logged_in" for ::1 at 2020-05-03 14:28:11 -0500
+Processing by SessionsController#logged_in as HTML
+  [1m[36mUser Load (50.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 34], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/current_user_concern.rb:10:in `set_current_user'
+Completed 200 OK in 54ms (Views: 0.8ms | ActiveRecord: 50.0ms | Allocations: 973)
+
+
+Started GET "/logged_in" for ::1 at 2020-05-03 14:36:57 -0500
+Processing by SessionsController#logged_in as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 34], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/current_user_concern.rb:10:in `set_current_user'
+Completed 200 OK in 30ms (Views: 4.4ms | ActiveRecord: 10.9ms | Allocations: 1058)
+
+
+Started GET "/logged_in" for ::1 at 2020-05-03 14:39:21 -0500
+Processing by SessionsController#logged_in as HTML
+  [1m[36mUser Load (3.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 34], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/current_user_concern.rb:10:in `set_current_user'
+Completed 200 OK in 7ms (Views: 0.6ms | ActiveRecord: 3.2ms | Allocations: 980)
+
+
+Started GET "/logged_in" for ::1 at 2020-05-03 14:40:44 -0500
+Processing by SessionsController#logged_in as HTML
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 34], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/current_user_concern.rb:10:in `set_current_user'
+Completed 200 OK in 5ms (Views: 0.4ms | ActiveRecord: 1.5ms | Allocations: 974)
+
+
+Started GET "/logged_in" for ::1 at 2020-05-03 14:44:19 -0500
+Processing by SessionsController#logged_in as HTML
+  [1m[36mUser Load (23.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 34], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/current_user_concern.rb:10:in `set_current_user'
+Completed 200 OK in 48ms (Views: 6.0ms | ActiveRecord: 23.2ms | Allocations: 976)
+
+
+Started GET "/logged_in" for ::1 at 2020-05-03 14:51:46 -0500
+Processing by SessionsController#logged_in as HTML
+  [1m[36mUser Load (29.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 34], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/current_user_concern.rb:10:in `set_current_user'
+Completed 200 OK in 133ms (Views: 6.4ms | ActiveRecord: 93.5ms | Allocations: 1056)
+
+
+Started GET "/logged_in" for ::1 at 2020-05-03 14:52:16 -0500
+Processing by SessionsController#logged_in as HTML
+  [1m[36mUser Load (2.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 34], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/current_user_concern.rb:10:in `set_current_user'
+Completed 200 OK in 8ms (Views: 0.5ms | ActiveRecord: 2.9ms | Allocations: 975)
+
+
+Started GET "/logged_in" for ::1 at 2020-05-03 14:53:19 -0500
+Processing by SessionsController#logged_in as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 34], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/current_user_concern.rb:10:in `set_current_user'
+Completed 200 OK in 5ms (Views: 0.6ms | ActiveRecord: 0.5ms | Allocations: 972)
+
+
+Started GET "/logged_in" for ::1 at 2020-05-03 14:53:37 -0500
+Processing by SessionsController#logged_in as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 34], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/current_user_concern.rb:10:in `set_current_user'
+Completed 200 OK in 5ms (Views: 0.4ms | ActiveRecord: 0.4ms | Allocations: 980)
+
+
+Started GET "/logged_in" for ::1 at 2020-05-03 14:53:46 -0500
+Processing by SessionsController#logged_in as HTML
+  [1m[36mUser Load (2.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 34], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/current_user_concern.rb:10:in `set_current_user'
+Completed 200 OK in 10ms (Views: 0.5ms | ActiveRecord: 2.7ms | Allocations: 976)
+
+
+Started GET "/logged_in" for ::1 at 2020-05-03 14:55:36 -0500
+Processing by SessionsController#logged_in as HTML
+  [1m[36mUser Load (61.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 34], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/current_user_concern.rb:10:in `set_current_user'
+Completed 200 OK in 65ms (Views: 0.6ms | ActiveRecord: 61.2ms | Allocations: 974)
+
+
+Started GET "/logged_in" for ::1 at 2020-05-03 14:56:19 -0500
+Processing by SessionsController#logged_in as HTML
+  [1m[36mUser Load (198.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 34], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/current_user_concern.rb:10:in `set_current_user'
+Completed 200 OK in 206ms (Views: 1.5ms | ActiveRecord: 198.8ms | Allocations: 977)
+
+
+Started GET "/logged_in" for ::1 at 2020-05-03 14:56:29 -0500
+Processing by SessionsController#logged_in as HTML
+  [1m[36mUser Load (2.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 34], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/current_user_concern.rb:10:in `set_current_user'
+Completed 200 OK in 7ms (Views: 1.6ms | ActiveRecord: 2.1ms | Allocations: 971)
+
+
+Started GET "/logged_in" for ::1 at 2020-05-03 14:57:03 -0500
+Processing by SessionsController#logged_in as HTML
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 34], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/current_user_concern.rb:10:in `set_current_user'
+Completed 200 OK in 6ms (Views: 0.7ms | ActiveRecord: 1.2ms | Allocations: 976)
+
+
+Started GET "/logged_in" for ::1 at 2020-05-03 14:58:09 -0500
+Processing by SessionsController#logged_in as HTML
+  [1m[36mUser Load (2.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 34], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/current_user_concern.rb:10:in `set_current_user'
+Completed 200 OK in 8ms (Views: 2.3ms | ActiveRecord: 2.6ms | Allocations: 977)
+
+
+Started GET "/logged_in" for ::1 at 2020-05-03 14:59:21 -0500
+Processing by SessionsController#logged_in as HTML
+  [1m[36mUser Load (16.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 34], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/current_user_concern.rb:10:in `set_current_user'
+Completed 200 OK in 24ms (Views: 3.3ms | ActiveRecord: 16.2ms | Allocations: 977)
+
+
+Started GET "/logged_in" for ::1 at 2020-05-03 15:00:27 -0500
+Processing by SessionsController#logged_in as HTML
+  [1m[36mUser Load (43.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 34], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/current_user_concern.rb:10:in `set_current_user'
+Completed 200 OK in 51ms (Views: 0.9ms | ActiveRecord: 43.8ms | Allocations: 974)
+
+
+Started GET "/logged_in" for ::1 at 2020-05-03 15:01:09 -0500
+Processing by SessionsController#logged_in as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 34], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/current_user_concern.rb:10:in `set_current_user'
+Completed 200 OK in 6ms (Views: 0.7ms | ActiveRecord: 0.5ms | Allocations: 980)
+
+
+Started GET "/logged_in" for ::1 at 2020-05-03 15:01:31 -0500
+Processing by SessionsController#logged_in as HTML
+  [1m[36mUser Load (101.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 34], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/current_user_concern.rb:10:in `set_current_user'
+Completed 200 OK in 108ms (Views: 1.8ms | ActiveRecord: 101.5ms | Allocations: 974)
+
+
+Started GET "/logged_in" for ::1 at 2020-05-03 15:03:36 -0500
+Processing by SessionsController#logged_in as HTML
+  [1m[36mUser Load (13.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 34], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/current_user_concern.rb:10:in `set_current_user'
+Completed 200 OK in 19ms (Views: 2.6ms | ActiveRecord: 13.5ms | Allocations: 976)
+
+
+Started GET "/logged_in" for ::1 at 2020-05-03 15:04:02 -0500
+Processing by SessionsController#logged_in as HTML
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 34], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/current_user_concern.rb:10:in `set_current_user'
+Completed 200 OK in 5ms (Views: 1.5ms | ActiveRecord: 1.5ms | Allocations: 987)
+
+
+Started GET "/logged_in" for ::1 at 2020-05-03 15:04:23 -0500
+Processing by SessionsController#logged_in as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 34], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/current_user_concern.rb:10:in `set_current_user'
+Completed 200 OK in 3ms (Views: 0.6ms | ActiveRecord: 0.3ms | Allocations: 979)
+
+
+Started GET "/logged_in" for ::1 at 2020-05-03 15:08:40 -0500
+Processing by SessionsController#logged_in as HTML
+  [1m[36mUser Load (5.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 34], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/current_user_concern.rb:10:in `set_current_user'
+Completed 200 OK in 10ms (Views: 0.7ms | ActiveRecord: 5.9ms | Allocations: 976)
+
+
+Started GET "/logged_in" for ::1 at 2020-05-03 15:08:47 -0500
+Processing by SessionsController#logged_in as HTML
+  [1m[36mUser Load (2.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 34], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/current_user_concern.rb:10:in `set_current_user'
+Completed 200 OK in 8ms (Views: 0.7ms | ActiveRecord: 2.6ms | Allocations: 979)
+
+
+Started GET "/logged_in" for ::1 at 2020-05-03 15:16:50 -0500
+Processing by SessionsController#logged_in as HTML
+  [1m[36mUser Load (2.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 34], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/current_user_concern.rb:10:in `set_current_user'
+Completed 200 OK in 30ms (Views: 0.8ms | ActiveRecord: 25.2ms | Allocations: 1061)
+
+
+Started GET "/logged_in" for ::1 at 2020-05-03 15:17:16 -0500
+Processing by SessionsController#logged_in as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 34], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/current_user_concern.rb:10:in `set_current_user'
+Completed 200 OK in 9ms (Views: 0.8ms | ActiveRecord: 0.9ms | Allocations: 974)
+
+
+Started GET "/logged_in" for ::1 at 2020-05-03 15:17:19 -0500
+Processing by SessionsController#logged_in as HTML
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 34], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/current_user_concern.rb:10:in `set_current_user'
+Completed 200 OK in 5ms (Views: 0.9ms | ActiveRecord: 1.8ms | Allocations: 976)
+
+
+Started GET "/logged_in" for ::1 at 2020-05-03 15:18:53 -0500
+Processing by SessionsController#logged_in as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 34], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/current_user_concern.rb:10:in `set_current_user'
+Completed 200 OK in 5ms (Views: 1.1ms | ActiveRecord: 0.5ms | Allocations: 980)
+
+
+Started GET "/logged_in" for ::1 at 2020-05-03 15:19:19 -0500
+Processing by SessionsController#logged_in as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 34], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/current_user_concern.rb:10:in `set_current_user'
+Completed 200 OK in 3ms (Views: 0.5ms | ActiveRecord: 0.7ms | Allocations: 975)
+
+
+Started GET "/logged_in" for ::1 at 2020-05-03 15:19:29 -0500
+Processing by SessionsController#logged_in as HTML
+  [1m[36mUser Load (3.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 34], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/current_user_concern.rb:10:in `set_current_user'
+Completed 200 OK in 9ms (Views: 0.4ms | ActiveRecord: 3.4ms | Allocations: 976)
+
+
+Started GET "/logged_in" for ::1 at 2020-05-03 15:20:22 -0500
+Processing by SessionsController#logged_in as HTML
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 34], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/current_user_concern.rb:10:in `set_current_user'
+Completed 200 OK in 5ms (Views: 1.0ms | ActiveRecord: 1.1ms | Allocations: 973)
+
+
+Started GET "/logged_in" for ::1 at 2020-05-03 15:40:13 -0500
+Processing by SessionsController#logged_in as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 34], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/current_user_concern.rb:10:in `set_current_user'
+Completed 200 OK in 14ms (Views: 1.0ms | ActiveRecord: 1.5ms | Allocations: 1058)
+
+
+Started GET "/logged_in" for ::1 at 2020-05-03 15:40:27 -0500
+Processing by SessionsController#logged_in as HTML
+  [1m[36mUser Load (159.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 34], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/current_user_concern.rb:10:in `set_current_user'
+Completed 200 OK in 162ms (Views: 0.5ms | ActiveRecord: 159.3ms | Allocations: 974)
+
+
+Started GET "/logged_in" for ::1 at 2020-05-03 15:40:39 -0500
+Processing by SessionsController#logged_in as HTML
+  [1m[36mUser Load (11.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 34], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/current_user_concern.rb:10:in `set_current_user'
+Completed 200 OK in 14ms (Views: 0.8ms | ActiveRecord: 11.2ms | Allocations: 976)
+
+
+Started GET "/logged_in" for ::1 at 2020-05-03 15:40:47 -0500
+Processing by SessionsController#logged_in as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 34], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/current_user_concern.rb:10:in `set_current_user'
+Completed 200 OK in 3ms (Views: 0.6ms | ActiveRecord: 0.5ms | Allocations: 977)
+
+
+Started GET "/logged_in" for ::1 at 2020-05-03 15:50:15 -0500
+Processing by SessionsController#logged_in as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 34], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/current_user_concern.rb:10:in `set_current_user'
+Completed 200 OK in 9ms (Views: 0.7ms | ActiveRecord: 1.0ms | Allocations: 1060)
+
+
+Started GET "/logged_in" for ::1 at 2020-05-03 15:58:55 -0500
+Processing by SessionsController#logged_in as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 34], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/current_user_concern.rb:10:in `set_current_user'
+Completed 200 OK in 8ms (Views: 0.7ms | ActiveRecord: 0.6ms | Allocations: 1054)
+
+
+Started GET "/logged_in" for ::1 at 2020-05-03 15:59:23 -0500
+Processing by SessionsController#logged_in as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 34], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/current_user_concern.rb:10:in `set_current_user'
+Completed 200 OK in 4ms (Views: 0.5ms | ActiveRecord: 0.7ms | Allocations: 982)
+
+
+Started GET "/logged_in" for ::1 at 2020-05-03 15:59:26 -0500
+Processing by SessionsController#logged_in as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 34], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/current_user_concern.rb:10:in `set_current_user'
+Completed 200 OK in 3ms (Views: 0.5ms | ActiveRecord: 0.3ms | Allocations: 979)
+
+
+Started GET "/logged_in" for ::1 at 2020-05-03 15:59:27 -0500
+Processing by SessionsController#logged_in as HTML
+  [1m[36mUser Load (11.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 34], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/current_user_concern.rb:10:in `set_current_user'
+Completed 200 OK in 16ms (Views: 0.5ms | ActiveRecord: 11.5ms | Allocations: 976)
+
+
+Started GET "/logged_in" for ::1 at 2020-05-03 15:59:31 -0500
+Processing by SessionsController#logged_in as HTML
+  [1m[36mUser Load (11.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 34], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/current_user_concern.rb:10:in `set_current_user'
+Completed 200 OK in 15ms (Views: 0.9ms | ActiveRecord: 11.3ms | Allocations: 978)
+
+
+Started GET "/logged_in" for ::1 at 2020-05-03 15:59:41 -0500
+Processing by SessionsController#logged_in as HTML
+  [1m[36mUser Load (11.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 34], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/current_user_concern.rb:10:in `set_current_user'
+Completed 200 OK in 15ms (Views: 0.5ms | ActiveRecord: 11.6ms | Allocations: 973)
+
+
+Started GET "/logged_in" for ::1 at 2020-05-03 16:00:12 -0500
+Processing by SessionsController#logged_in as HTML
+  [1m[36mUser Load (3.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 34], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/current_user_concern.rb:10:in `set_current_user'
+Completed 200 OK in 6ms (Views: 0.6ms | ActiveRecord: 3.4ms | Allocations: 981)
+
+
+Started GET "/logged_in" for ::1 at 2020-05-03 16:02:04 -0500
+Processing by SessionsController#logged_in as HTML
+  [1m[36mUser Load (6.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 34], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/current_user_concern.rb:10:in `set_current_user'
+Completed 200 OK in 10ms (Views: 0.4ms | ActiveRecord: 6.9ms | Allocations: 978)
+
+
+Started GET "/logged_in" for ::1 at 2020-05-03 16:06:05 -0500
+Processing by SessionsController#logged_in as HTML
+  [1m[36mUser Load (47.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 34], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/current_user_concern.rb:10:in `set_current_user'
+Completed 200 OK in 51ms (Views: 0.7ms | ActiveRecord: 47.5ms | Allocations: 977)
+
+
+Started GET "/logged_in" for ::1 at 2020-05-03 16:06:06 -0500
+Processing by SessionsController#logged_in as HTML
+  [1m[36mUser Load (5.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 34], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/current_user_concern.rb:10:in `set_current_user'
+Completed 200 OK in 8ms (Views: 0.6ms | ActiveRecord: 5.2ms | Allocations: 975)
+
+
+Started GET "/logged_in" for ::1 at 2020-05-03 16:06:27 -0500
+Processing by SessionsController#logged_in as HTML
+  [1m[36mUser Load (9.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 34], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/current_user_concern.rb:10:in `set_current_user'
+Completed 200 OK in 13ms (Views: 1.0ms | ActiveRecord: 9.4ms | Allocations: 981)
+
+
+Started GET "/logged_in" for ::1 at 2020-05-03 16:06:32 -0500
+Processing by SessionsController#logged_in as HTML
+  [1m[36mUser Load (12.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 34], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/current_user_concern.rb:10:in `set_current_user'
+Completed 200 OK in 16ms (Views: 0.7ms | ActiveRecord: 12.4ms | Allocations: 976)
+
+
+Started GET "/logged_in" for ::1 at 2020-05-03 16:09:19 -0500
+Processing by SessionsController#logged_in as HTML
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 34], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/current_user_concern.rb:10:in `set_current_user'
+Completed 200 OK in 11ms (Views: 4.3ms | ActiveRecord: 1.9ms | Allocations: 975)
+
+
+Started GET "/logged_in" for ::1 at 2020-05-03 16:09:26 -0500
+Processing by SessionsController#logged_in as HTML
+  [1m[36mUser Load (39.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 34], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/current_user_concern.rb:10:in `set_current_user'
+Completed 200 OK in 44ms (Views: 0.6ms | ActiveRecord: 39.3ms | Allocations: 977)
+
+
+Started GET "/logged_in" for ::1 at 2020-05-03 16:11:35 -0500
+Processing by SessionsController#logged_in as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 34], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/current_user_concern.rb:10:in `set_current_user'
+Completed 200 OK in 4ms (Views: 0.5ms | ActiveRecord: 0.4ms | Allocations: 977)
+
+
+Started GET "/logged_in" for ::1 at 2020-05-03 16:12:45 -0500
+Processing by SessionsController#logged_in as HTML
+  [1m[36mUser Load (59.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 34], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/current_user_concern.rb:10:in `set_current_user'
+Completed 200 OK in 76ms (Views: 0.5ms | ActiveRecord: 59.1ms | Allocations: 979)
+
+
+Started GET "/logged_in" for ::1 at 2020-05-03 16:13:27 -0500
+Processing by SessionsController#logged_in as HTML
+  [1m[36mUser Load (3.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 34], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/current_user_concern.rb:10:in `set_current_user'
+Completed 200 OK in 7ms (Views: 0.6ms | ActiveRecord: 3.5ms | Allocations: 975)
+
+
+Started GET "/logged_in" for ::1 at 2020-05-03 16:13:30 -0500
+Processing by SessionsController#logged_in as HTML
+  [1m[36mUser Load (2.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 34], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/current_user_concern.rb:10:in `set_current_user'
+Completed 200 OK in 7ms (Views: 0.8ms | ActiveRecord: 2.7ms | Allocations: 978)
+
+
+Started GET "/logged_in" for ::1 at 2020-05-03 16:15:58 -0500
+Processing by SessionsController#logged_in as HTML
+  [1m[36mUser Load (134.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 34], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/current_user_concern.rb:10:in `set_current_user'
+Completed 200 OK in 142ms (Views: 2.9ms | ActiveRecord: 134.4ms | Allocations: 973)
+
+
+Started GET "/logged_in" for ::1 at 2020-05-03 16:16:18 -0500
+Processing by SessionsController#logged_in as HTML
+  [1m[36mUser Load (2.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 34], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/current_user_concern.rb:10:in `set_current_user'
+Completed 200 OK in 5ms (Views: 0.5ms | ActiveRecord: 2.3ms | Allocations: 975)
+
+
+Started GET "/logged_in" for ::1 at 2020-05-03 16:19:49 -0500
+Processing by SessionsController#logged_in as HTML
+  [1m[36mUser Load (29.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 34], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/current_user_concern.rb:10:in `set_current_user'
+Completed 200 OK in 34ms (Views: 1.0ms | ActiveRecord: 29.2ms | Allocations: 974)
+
+
+Started GET "/logged_in" for ::1 at 2020-05-03 16:20:28 -0500
+Processing by SessionsController#logged_in as HTML
+  [1m[36mUser Load (6.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 34], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/current_user_concern.rb:10:in `set_current_user'
+Completed 200 OK in 11ms (Views: 0.8ms | ActiveRecord: 6.4ms | Allocations: 980)
+
+
+Started GET "/logged_in" for ::1 at 2020-05-03 16:20:52 -0500
+Processing by SessionsController#logged_in as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 34], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/current_user_concern.rb:10:in `set_current_user'
+Completed 200 OK in 4ms (Views: 0.4ms | ActiveRecord: 0.6ms | Allocations: 978)
+
+
+Started GET "/logged_in" for ::1 at 2020-05-03 16:22:08 -0500
+Processing by SessionsController#logged_in as HTML
+  [1m[36mUser Load (2.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 34], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/current_user_concern.rb:10:in `set_current_user'
+Completed 200 OK in 5ms (Views: 0.5ms | ActiveRecord: 2.1ms | Allocations: 980)
+
+
+Started GET "/logged_in" for ::1 at 2020-05-03 16:24:09 -0500
+Processing by SessionsController#logged_in as HTML
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 34], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/current_user_concern.rb:10:in `set_current_user'
+Completed 200 OK in 6ms (Views: 1.1ms | ActiveRecord: 1.6ms | Allocations: 984)
+
+
+Started GET "/logged_in" for ::1 at 2020-05-03 16:24:27 -0500
+Processing by SessionsController#logged_in as HTML
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 34], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/current_user_concern.rb:10:in `set_current_user'
+Completed 200 OK in 5ms (Views: 0.7ms | ActiveRecord: 1.3ms | Allocations: 978)
+
+
+Started GET "/logged_in" for ::1 at 2020-05-03 16:25:53 -0500
+Processing by SessionsController#logged_in as HTML
+  [1m[36mUser Load (13.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 34], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/current_user_concern.rb:10:in `set_current_user'
+Completed 200 OK in 19ms (Views: 1.2ms | ActiveRecord: 13.6ms | Allocations: 978)
+
+
+Started GET "/logged_in" for ::1 at 2020-05-03 16:26:11 -0500
+Processing by SessionsController#logged_in as HTML
+  [1m[36mUser Load (32.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 34], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/current_user_concern.rb:10:in `set_current_user'
+Completed 200 OK in 41ms (Views: 1.1ms | ActiveRecord: 32.8ms | Allocations: 974)
+
+
+Started GET "/logged_in" for ::1 at 2020-05-03 16:29:32 -0500
+Processing by SessionsController#logged_in as HTML
+  [1m[36mUser Load (9.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 34], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/current_user_concern.rb:10:in `set_current_user'
+Completed 200 OK in 50ms (Views: 6.0ms | ActiveRecord: 9.9ms | Allocations: 977)
+
+
+Started GET "/logged_in" for ::1 at 2020-05-03 16:30:32 -0500
+Processing by SessionsController#logged_in as HTML
+  [1m[36mUser Load (2.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 34], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/current_user_concern.rb:10:in `set_current_user'
+Completed 200 OK in 5ms (Views: 0.8ms | ActiveRecord: 2.4ms | Allocations: 976)
+
+
+Started GET "/logged_in" for ::1 at 2020-05-03 16:30:49 -0500
+Processing by SessionsController#logged_in as HTML
+  [1m[36mUser Load (174.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 34], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/current_user_concern.rb:10:in `set_current_user'
+Completed 200 OK in 179ms (Views: 0.8ms | ActiveRecord: 174.8ms | Allocations: 981)
+
+
+Started GET "/logged_in" for ::1 at 2020-05-03 16:31:05 -0500
+Processing by SessionsController#logged_in as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 34], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/current_user_concern.rb:10:in `set_current_user'
+Completed 200 OK in 4ms (Views: 0.5ms | ActiveRecord: 0.5ms | Allocations: 977)
+
+
+Started GET "/logged_in" for ::1 at 2020-05-03 16:31:23 -0500
+Processing by SessionsController#logged_in as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 34], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/current_user_concern.rb:10:in `set_current_user'
+Completed 200 OK in 3ms (Views: 0.5ms | ActiveRecord: 0.4ms | Allocations: 975)
+
+
+Started GET "/logged_in" for ::1 at 2020-05-03 16:31:53 -0500
+Processing by SessionsController#logged_in as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 34], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/current_user_concern.rb:10:in `set_current_user'
+Completed 200 OK in 5ms (Views: 0.7ms | ActiveRecord: 0.8ms | Allocations: 978)
+
+
+Started GET "/logged_in" for ::1 at 2020-05-03 16:32:06 -0500
+Processing by SessionsController#logged_in as HTML
+  [1m[36mUser Load (27.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 34], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/current_user_concern.rb:10:in `set_current_user'
+Completed 200 OK in 31ms (Views: 0.9ms | ActiveRecord: 27.5ms | Allocations: 976)
+
+
+Started GET "/logged_in" for ::1 at 2020-05-03 16:33:05 -0500
+Processing by SessionsController#logged_in as HTML
+  [1m[36mUser Load (3.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 34], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/current_user_concern.rb:10:in `set_current_user'
+Completed 200 OK in 6ms (Views: 0.5ms | ActiveRecord: 3.8ms | Allocations: 971)
+
+
+Started GET "/logged_in" for ::1 at 2020-05-03 16:35:36 -0500
+Processing by SessionsController#logged_in as HTML
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 34], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/current_user_concern.rb:10:in `set_current_user'
+Completed 200 OK in 7ms (Views: 0.7ms | ActiveRecord: 1.9ms | Allocations: 978)
+
+
+Started GET "/logged_in" for ::1 at 2020-05-03 16:37:25 -0500
+Processing by SessionsController#logged_in as HTML
+  [1m[36mUser Load (39.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 34], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/current_user_concern.rb:10:in `set_current_user'
+Completed 200 OK in 50ms (Views: 0.8ms | ActiveRecord: 39.9ms | Allocations: 972)
+
+
