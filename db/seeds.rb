@@ -8,10 +8,10 @@ User.create(
     first_name: "Tom",
     last_name: "Tobar",
     email: "codetombomb@gmail.com",
-    password: "asdfasdf",
-    password_confirmation: "asdfasdf",
+    password: "tombomb",
+    password_confirmation: "tombomb",
     address: "19513 Melwas Way",
-    city: "Pfrumundachee",
+    city: "Pflugerville",
     state: "TX",
     zip_code: "78666",
     phone_number: "512.487.2569"
