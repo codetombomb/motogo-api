@@ -1,20 +1,26 @@
-User.all.destroy_all
-Owner.all.destroy_all
-Renter.all.destroy_all
-Bike.all.destroy_all
+User.destroy_all
+Owner.destroy_all
+Renter.destroy_all
+Bike.destroy_all
 
 
-User.create(
+tom = User.create(
     first_name: "Tom",
     last_name: "Tobar",
     email: "codetombomb@gmail.com",
     password: "tombomb",
     password_confirmation: "tombomb",
-    address: "19513 Melwas Way",
+    street: "19513 Melwas Way",
     city: "Pflugerville",
     state: "TX",
-    zip_code: "78666",
+    zip_code: "78660",
+    country: "USA",
     phone_number: "512.487.2569"
+)
+tom.avatar.attach(
+    io: File.open('./public/avatars/IMG_1196.jpeg'),
+    filename: 'IMG_1196.jpeg',
+    content_type: 'application/jpeg'
 )
 # Generate users
 10.times{
@@ -28,10 +34,11 @@ User.create(
     email: "#{first_name}.#{last_name}@gmail.com",
     password: password,
     password_confirmation: password,
-    address: Faker::Address.street_address,
+    street: Faker::Address.street_address,
     city: Faker::Address.city,
     state: Faker::Address.state_abbr,
     zip_code: Faker::Address.zip,
+    country: "USA",
     phone_number: Faker::PhoneNumber.cell_phone
  )
 }
@@ -58,11 +65,13 @@ Owner.all.each do |owner|
             year: rand(1960..2020),
             make: BIKES_LIST.sample,
             model: Faker::Games::Zelda.character,
+            miles: rand(19..50000),
+            license_plate: "PL8 NMB3R",
             rating: rand(1..10),
             bike_name: Faker::Games::Zelda.item,
             category: CATEGORIES.sample
         )
-
+    
         #Grab ID of last bike created and assign it to a var
         last_bike = Bike.last.id
         Post.create(
