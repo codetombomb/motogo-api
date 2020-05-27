@@ -1,19 +1,21 @@
 class RegistrationsController < ApplicationController
+    
     def create
+        
         user = User.create!(
             first_name: params['user']['first_name'],
             last_name: params['user']['last_name'],
             email: params['user']['email'],
             password: params['user']['password'],
             password_confirmation: params['user']['password_confirmation'],
-            address: params['user']['address'],
+            street: params['user']['street'],
             city: params['user']['city'],
             state: params['user']['state'],
             zip_code: params['user']['zip_code'],
             phone_number: params['user']['phone_number']
-
-        )
-        if user
+            )
+            if user
+            # byebug
             session[:user_id] = user.id 
             render json: {
                 status: :created,
@@ -24,4 +26,3 @@ class RegistrationsController < ApplicationController
         end
     end
 end
-

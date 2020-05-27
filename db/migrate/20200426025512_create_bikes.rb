@@ -5,6 +5,8 @@ class CreateBikes < ActiveRecord::Migration[6.0]
       t.integer :year
       t.string :make
       t.string :model
+      t.integer :miles
+      t.string :license_plate
       t.integer :rating
       t.string :bike_name
       t.string :category
