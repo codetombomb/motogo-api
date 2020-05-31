@@ -9,10 +9,11 @@ class CreateUsers < ActiveRecord::Migration[6.0]
       t.string :city
       t.string :state
       t.string :zip_code
+      t.string :country
       t.float :latitude
       t.float :longitude
       t.string :phone_number
-
+      t.string :avatar_url
       t.timestamps
     end
   end

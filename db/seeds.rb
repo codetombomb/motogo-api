@@ -10,7 +10,7 @@ tom = User.create(
     email: "codetombomb@gmail.com",
     password: "tombomb",
     password_confirmation: "tombomb",
-    street: "19513 Melwas Way",
+    address: "19513 Melwas Way",
     city: "Pflugerville",
     state: "TX",
     zip_code: "78660",
@@ -18,7 +18,7 @@ tom = User.create(
     phone_number: "512.487.2569"
 )
 tom.avatar.attach(
-    io: File.open('./public/avatars/IMG_1196.jpeg'),
+    io: File.open('./public/avatars/IMG_1196 copy.jpeg'),
     filename: 'IMG_1196.jpeg',
     content_type: 'application/jpeg'
 )
@@ -34,7 +34,7 @@ tom.avatar.attach(
     email: "#{first_name}.#{last_name}@gmail.com",
     password: password,
     password_confirmation: password,
-    street: Faker::Address.street_address,
+    address: Faker::Address.street_address,
     city: Faker::Address.city,
     state: Faker::Address.state_abbr,
     zip_code: Faker::Address.zip,

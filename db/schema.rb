@@ -41,6 +41,8 @@ ActiveRecord::Schema.define(version: 2020_04_26_025944) do
     t.integer "year"
     t.string "make"
     t.string "model"
+    t.integer "miles"
+    t.string "license_plate"
     t.integer "rating"
     t.string "bike_name"
     t.string "category"
@@ -86,9 +88,11 @@ ActiveRecord::Schema.define(version: 2020_04_26_025944) do
     t.string "city"
     t.string "state"
     t.string "zip_code"
+    t.string "country"
     t.float "latitude"
     t.float "longitude"
     t.string "phone_number"
+    t.string "avatar_url"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

@@ -9,6 +9,7 @@ gem 'faker' #generate dummy data
 gem 'awesome_print'
 gem 'active_model_serializers', '~> 0.10.10' #for serializers
 gem 'geocoder' #generate lat and long for users based on address
+gem "jwt", "~> 2.1"
 #########################################################################################################
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
