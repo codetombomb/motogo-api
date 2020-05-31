@@ -10,10 +10,11 @@ class CreateUsers < ActiveRecord::Migration[6.0]
       t.string :state
       t.string :zip_code
       t.string :country
-      t.float :latitude
-      t.float :longitude
+      t.float :lat
+      t.float :lon
       t.string :phone_number
       t.string :avatar_url
+      t.string :ip_address
       t.timestamps
     end
   end
