@@ -10,8 +10,8 @@ class RegistrationsController < ApplicationController
             city: params['user']['city'],
             state: params['user']['state'],
             zip_code: params['user']['zip_code'],
-            phone_number: params['user']['phone_number']
-
+            phone_number: params['user']['phone_number'],
+            ip_address: params['user']['ip_address']
         )
         if user
             session[:user_id] = user.id 
