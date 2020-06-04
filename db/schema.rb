@@ -60,6 +60,8 @@ ActiveRecord::Schema.define(version: 2020_04_26_025944) do
     t.integer "owner_id"
     t.integer "bike_id"
     t.integer "price_per_day"
+    t.date "start_date"
+    t.date "end_date"
     t.text "description"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
