@@ -19,6 +19,12 @@ tom = User.create(
     avatar_url: "https://miro.medium.com/fit/c/96/96/2*wyz7em7c3N9wJyFMBTpOgg.jpeg",
     ip_address: "45.20.193.141"
 )
+
+tom.avatar.attach(
+    io: File.open('./public/avatars/IMG_1196 copy.jpeg'),
+    filename: 'IMG_1196 copy.jpeg', 
+    content_type: "application/pdf"
+)
 10.times{
     password = Faker::Internet.password(min_length: 10, max_length: 20, mix_case: true, special_characters: true)
     first_name = Faker::Name.first_name

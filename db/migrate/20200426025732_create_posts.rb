@@ -4,8 +4,6 @@ class CreatePosts < ActiveRecord::Migration[6.0]
       t.integer :owner_id
       t.integer :bike_id
       t.integer :price_per_day
-      t.date :start_date
-      t.date :end_date
       t.text :description
 
       t.timestamps

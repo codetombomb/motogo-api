@@ -14,6 +14,11 @@ class RegistrationsController < ApplicationController
             ip_address: params['user']['ip_address']
         )
         if user
+            # user.avatar.attach(
+            #     io: File.open("http://localhost:3001/#{params['avatar']["filename"]}"),
+            #     filename: params['avatar']['filename'],
+            #     content_type: params['avatar']['content_type']
+            # )
             session[:user_id] = user.id 
             render json: {
                 status: :created,
