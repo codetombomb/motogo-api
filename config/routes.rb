@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   resources :users
+  resources :renter_posts
   resources :sessions, only: [:create]
   resources :registrations, only: [:create]
   resources :posts, only: [:index, :create]

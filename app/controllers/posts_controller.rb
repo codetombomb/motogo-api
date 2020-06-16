@@ -21,8 +21,18 @@ class PostsController < ApplicationController
             bike_name: params['bike']['bike_name'],
             category: params['bike']['category']
         )
-        if @owner && @bike
-            render json: @bike
+        if @bike
+            @post = Post.create(
+                owner_id: @owner.id,
+                bike_id: @bike.id,
+                price_per_day: params['bike']['cost_per_day'],
+                description: params['bike']['description']
+            )
+            if @post
+                render json: @post
+            else
+                render json: { status: 500, error: "Could not create Post instance so bike info or user info is incorrect. Could also be that my logic is not right..."}
+            end
         else
             render json: { status: 500 }
         end

@@ -5,7 +5,7 @@ class CreateRenterPosts < ActiveRecord::Migration[6.0]
       t.integer :post_id
       t.date :start_date
       t.date :end_date
-      t.string :status
+      t.string :status, default: "Available"
 
       t.timestamps
     end

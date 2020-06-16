@@ -70,7 +70,7 @@ ActiveRecord::Schema.define(version: 2020_04_26_025944) do
     t.integer "post_id"
     t.date "start_date"
     t.date "end_date"
-    t.string "status"
+    t.string "status", default: "Available"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
