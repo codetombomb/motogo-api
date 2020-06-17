@@ -1,8 +1,12 @@
 class RenterPostSerializer < ActiveModel::Serializer
-  attributes :id, :renter, :post, :start_date, :end_date, :rent_status
+  attributes :id, :renter, :post, :start_date, :end_date, :rent_status, :bike
 
   def renter
     User.find(self.object.renter_id)
+  end
+
+  def bike
+    Bike.find(self.post.bike_id)
   end
 
   def post

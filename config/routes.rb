@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   resources :posts, only: [:index, :create]
   delete :logout, to: "sessions#logout"
   get :logged_in, to: "sessions#logged_in"
+  get :bike_rent_history, to: "users#bike_rent_history"
   root to: "static#home"
   default_url_options :host => "localhost:3001"
 end

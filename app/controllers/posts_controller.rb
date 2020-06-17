@@ -1,7 +1,14 @@
 class PostsController < ApplicationController
 
     def index
-        @posts = Post.all 
+        # @posts = Post.all
+        @posts = []
+        # byebug
+        Post.all.map do |post|
+            if !RenterPost.find_by(post_id: post.id)
+                @posts << post
+            end
+        end 
         render json: @posts
     end
 
