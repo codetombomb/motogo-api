@@ -96,6 +96,7 @@ ActiveRecord::Schema.define(version: 2020_04_26_025944) do
     t.string "phone_number"
     t.string "avatar_url"
     t.string "ip_address"
+    t.integer "money_made", default: 0
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

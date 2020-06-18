@@ -15,6 +15,7 @@ class CreateUsers < ActiveRecord::Migration[6.0]
       t.string :phone_number
       t.string :avatar_url
       t.string :ip_address
+      t.integer :money_made, default: 0
       t.timestamps
     end
   end
