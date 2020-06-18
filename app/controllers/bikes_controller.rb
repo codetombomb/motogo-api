@@ -30,7 +30,7 @@ class BikesController < ApplicationController
     def my_bikes_history 
         if @current_user
             my_bikes = []
-            @my_bike_posts = {}
+            @my_bike_posts = []
             
             # Get all bikes associated with current user
             Bike.all.map do |bike|
@@ -42,21 +42,19 @@ class BikesController < ApplicationController
             #Iterate over my bikes and find posts associated with bike
             my_bikes.each do |mb|
                 Post.all.map do |post|
-                    num = 0
                     if post.bike_id == mb.id
-                        arr = []
-                        hash = {}
-                        hash[:bike] = mb
-                        hash[:post] = post 
-                        hash[:renter_post] = RenterPost.find_by(post_id: post.id)
-                        hash[:renter] = User.find(RenterPost.find_by(post_id: post.id).renter.id)
-                        arr << hash 
-                        @my_bike_posts[:"bike_#{num}"] = arr
+
+                        bike_renter_post = {}
+                        bike_renter_post[:bike] = mb
+                        bike_renter_post[:post] = post 
+                        bike_renter_post[:renter_post] = RenterPost.find_by(post_id: post.id)
+                        bike_renter_post[:renter] = User.find(RenterPost.find_by(post_id: post.id).renter.id)
+
+                        @my_bike_posts << bike_renter_post
                     end
-                   num += 1
                 end
             end
-            render json: @my_bike_posts
+            render json: {my_bike_posts: @my_bike_posts}
         else
             render json: { message: "Must be logged in" }
         end

@@ -26,6 +26,7 @@ class UsersController < ApplicationController
         bike = Bike.find(mp.bike_id)
         owner = User.find(mp.owner_id)
         renter_post = RenterPost.find_by(post_id: mp.id)
+        
         bike_owner_post[:bike] = bike
         bike_owner_post[:owner] = owner
         bike_owner_post[:post] = mp
